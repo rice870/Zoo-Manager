@@ -7,10 +7,17 @@ using namespace std;
 
 class Animal{
     protected:
-        int health;
+        int fatigue;
         int happiness;
         int hunger;
         string species;
+        string diet;
+    public:
+        Animal():fatigue(0),happiness(0),hunger(0),species(""),diet(""){}
+        
+        virtual void feed(string food, int amountKg){
+            hunger -= amountKg;
+        };
 
 };
 
