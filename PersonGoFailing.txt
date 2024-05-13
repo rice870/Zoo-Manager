@@ -1,0 +1,70 @@
+Problem 1:
+
+getToSpot (10,-10):
+startX: 0; startY: 0
+Iteration 0 of Go(10,-10); posX: 3.53553; posY: 3.53553
+Iteration 1 of Go(10,-10); posX: 5.69036; posY: 8.04738
+Iteration 2 of Go(10,-10); posX: 6.85168; posY: 12.9106
+Iteration 3 of Go(10,-10); posX: 7.53237; posY: 17.8641
+Iteration 4 of Go(10,-10); posX: 7.97344; posY: 22.8446
+Iteration 5 of Go(10,-10); posX: 8.28137; posY: 27.8351
+Iteration 6 of Go(10,-10); posX: 8.50825; posY: 32.83
+Iteration 7 of Go(10,-10); posX: 8.68229; posY: 37.8269
+Iteration 8 of Go(10,-10); posX: 8.82; posY: 42.825
+Iteration 9 of Go(10,-10); posX: 8.93166; posY: 47.8238
+
+getToSpot (-10,10):
+startX: 0; startY: 0
+Iteration 0 of Go(-10,10); posX: -3.53553; posY: -3.53553
+Iteration 1 of Go(-10,10); posX: -5.69036; posY: -8.04738
+Iteration 2 of Go(-10,10); posX: -6.85168; posY: -12.9106
+Iteration 3 of Go(-10,10); posX: -7.53237; posY: -17.8641
+Iteration 4 of Go(-10,10); posX: -7.97344; posY: -22.8446
+Iteration 5 of Go(-10,10); posX: -8.28137; posY: -27.8351
+Iteration 6 of Go(-10,10); posX: -8.50825; posY: -32.83
+Iteration 7 of Go(-10,10); posX: -8.68229; posY: -37.8269
+Iteration 8 of Go(-10,10); posX: -8.82; posY: -42.825
+Iteration 9 of Go(-10,10); posX: -8.93166; posY: -47.8238
+
+for some reason ( (xDiff > 0) * 2 - 1) (and it's y equivalent) isn't working as intended.
+
+This was because for positive and negative values, sin and cos would work as intended; hence ( (xDiff > 0) * 2 - 1) points the object away (unlike for when both are negative).
+The solution was:
+    double newSpeed = speed * (!((yDiff < 0) && (xDiff < 0)) * 2 - 1);
+    posX += newSpeed * cos(angle);
+    posY += newSpeed * sin(angle);
+
+Problem 2:
+
+getToSpot (-10,10):
+startX: 0; startY: 0
+xDiff: -10 yDiff: 10
+Iteration 0 of Go(-10,10); posX: 3.53553; posY: -3.53553
+xDiff: -13.5355 yDiff: 13.5355
+Iteration 1 of Go(-10,10); posX: 7.07107; posY: -7.07107
+xDiff: -17.0711 yDiff: 17.0711
+Iteration 2 of Go(-10,10); posX: 10.6066; posY: -10.6066
+xDiff: -20.6066 yDiff: 20.6066
+Iteration 3 of Go(-10,10); posX: 14.1421; posY: -14.1421
+xDiff: -24.1421 yDiff: 24.1421
+Iteration 4 of Go(-10,10); posX: 17.6777; posY: -17.6777
+xDiff: -27.6777 yDiff: 27.6777
+Iteration 5 of Go(-10,10); posX: 21.2132; posY: -21.2132
+xDiff: -31.2132 yDiff: 31.2132
+Iteration 6 of Go(-10,10); posX: 24.7487; posY: -24.7487
+xDiff: -34.7487 yDiff: 34.7487
+Iteration 7 of Go(-10,10); posX: 28.2843; posY: -28.2843
+xDiff: -38.2843 yDiff: 38.2843
+Iteration 8 of Go(-10,10); posX: 31.8198; posY: -31.8198
+xDiff: -41.8198 yDiff: 41.8198
+Iteration 9 of Go(-10,10); posX: 35.3553; posY: -35.3553
+
+Summary: the ratio of x to y is either positive or negative, however this could mean 4 different things, hence creating BOTH problems.
+
+solution:
+    double newSpeed = speed * (!((yDiff < 0) && (xDiff < 0)) * 2 - 1);
+    newSpeed = speed * (!((yDiff > 0) && (xDiff < 0)) * 2 - 1);
+    posX += newSpeed * cos(angle);
+    posY += newSpeed * sin(angle);
+
+essentially, ratios and atan take into account 0 to pi/2 to and 0 to -pi/2, but we need to account for 2pi

@@ -12,12 +12,15 @@ class Animal {
         int happiness;
         int hunger;
         int weight;
+        // If we implement a graphics thing this might be good
+        int posX;
+        int posY;
         string species;
         string diet;
         string name;
         string favourite_treat;
     public:
-        Animal(int weight, string species, string diet, string name, string favourite_treat):fatigue(0),happiness(0),hunger(0),weight(weight),species(species),diet(diet),name(name),favourite_treat(favourite_treat){}
+        Animal(int weight, string species, string diet, string name, string favourite_treat):fatigue(0),happiness(0),hunger(0),weight(weight),species(species),diet(diet),name(name),favourite_treat(favourite_treat),posX(0),posY(0){}
         
         virtual void feed(string food, int amountKg){
             hunger -= amountKg;
