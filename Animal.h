@@ -22,9 +22,17 @@ class Animal {
     public:
         Animal(int weight, string species, string diet, string name, string favourite_treat):fatigue(0),happiness(0),hunger(0),weight(weight),species(species),diet(diet),name(name),favourite_treat(favourite_treat),posX(0),posY(0){}
         
-        virtual void feed(string food, int amountKg){
-            hunger -= amountKg;
-            hunger = max(hunger, 0);
+        virtual void getFed(string food, int amountKg){
+            if (diet==food){
+                hunger -= amountKg;
+                hunger = max(hunger, 0);
+            }
+           
+            if (favourite_treat==food){
+                hunger -= amountKg;
+                hunger = max(hunger, 0);
+                happiness += amountKg;
+            }
         };
 
         virtual void rest(int hours){
@@ -32,11 +40,12 @@ class Animal {
             fatigue = max(fatigue, 0);
         }
 
+        /* we need to figure out how treats will differ from food
         virtual void receivefavourite_treat(string treat){
             if (favourite_treat==treat){
                 happiness++;
             }
-        }
+        } */ 
 
         void set_fatigue(int fatigue){
             this->fatigue = fatigue;

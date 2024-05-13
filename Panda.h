@@ -6,10 +6,11 @@
 class Panda : public Animal {
     public:
         Panda(int _weight, string _name):Animal(_weight, "panda", "bamboo", _name, "bamboo"){}
-        void feed(string food, int amountKg){
+        void getFed(string food, int amountKg){
             if (food==this->diet){
                 hunger -= amountKg/50;
-                happiness += 1;
+                hunger = max(0,hunger);
+                happiness += amountKg/100;
             }
 
         }

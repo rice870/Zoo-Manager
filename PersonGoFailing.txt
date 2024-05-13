@@ -63,7 +63,7 @@ Summary: the ratio of x to y is either positive or negative, however this could 
 
 solution:
     double newSpeed = speed * (!((yDiff < 0) && (xDiff < 0)) * 2 - 1);
-    newSpeed = speed * (!((yDiff > 0) && (xDiff < 0)) * 2 - 1);
+    newSpeed = newSpeed * (!((yDiff > 0) && (xDiff < 0)) * 2 - 1);
     posX += newSpeed * cos(angle);
     posY += newSpeed * sin(angle);
 
