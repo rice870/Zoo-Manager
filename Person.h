@@ -18,13 +18,13 @@ class Person{
         void Go(double goX, double goY){
             double xDiff = goX-posX;
             double yDiff = goY-posY;
+            double newSpeed;
             if (sqrt( xDiff*xDiff + yDiff*yDiff ) > 5){
                 double angle = atan(yDiff/xDiff);
-                double newSpeed = speed * (!((yDiff < 0) && (xDiff < 0)) * 2 - 1);
-                newSpeed = speed * (!((yDiff > 0) && (xDiff < 0)) * 2 - 1);
+                newSpeed = speed * (!((yDiff < 0) && (xDiff < 0)) * 2 - 1);
+                newSpeed = newSpeed * (!((yDiff > 0) && (xDiff < 0)) * 2 - 1);
                 posX += newSpeed * cos(angle);
                 posY += newSpeed * sin(angle);
-                cout << "xDiff: " << xDiff << " yDiff: " << yDiff << endl;
             } else {
                 posX = goX;
                 posY = goY;
