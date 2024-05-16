@@ -6,8 +6,13 @@ using namespace std;
 
 class Enclosure {
     private:
-        vector<Animal*> Animals;
+        vector<Animal*> animals;
         int enclosure_capacity;
         int posX;
         int posY;
+    public:
+        Enclosure();
+        Enclosure(Animal* animals);
+
+    
 };
