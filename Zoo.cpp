@@ -5,11 +5,13 @@ Zoo::Zoo() {
     openStatus = false;
     currentAnimals = 0;
 }
-Zoo::Zoo(string _name, bool _openStatus, int _animalCapacity) {
-    name = _name;
-    openStatus = _openStatus;
-    animalCapacity = _animalCapacity;
+Zoo::Zoo(string _name, bool _openStatus, int _animalCapacity, int money) {
+    this->name = _name;
+    this->openStatus = _openStatus;
+    this->animalCapacity = _animalCapacity;
+    this->money = money;
     currentAnimals = 0;
+    int amt_enclosures = 1;
 
 }
 string Zoo::get_name() {
