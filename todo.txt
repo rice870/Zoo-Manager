@@ -1,12 +1,9 @@
 To-do list for Zoo Manager:
 
-Current problems:
 
-- We are biting off far more than we can chew, with how much we have left to do, we may not complete this in time the way we are going. What we have in the plan is fine, there's no need to complicate things by adding more stuff. We should try and get the basics to work first
+Problem: We are biting off a bit more than we can chew, and we should try to complete this in the time we have left. What we have in the plan is fine, and we should try and get the basics to work first, and add to that after we have a working model of the program.
 
 How we can resolve this: Prioritise, and get the basics working first, then go from there.
-
-
 
 
 Phase 1 (Due 18th-19th May)
