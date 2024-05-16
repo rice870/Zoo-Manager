@@ -20,11 +20,14 @@ class Zoo {
         vector<Animal*> animals;
         int animalCapacity;
         int currentAnimals;
+        int money;
+        int cameraPosX;
+        int amt_enclosures;
 
 
     public:
         Zoo();
-        Zoo(string _name, bool _openStatus, int _animalCapacity);
+        Zoo(string _name, bool _openStatus, int _animalCapacity, int money);
         string get_name();
         vector<Animal*> get_animals();
         void set_name(string _name);
@@ -35,6 +38,7 @@ class Zoo {
         void openZoo();
         void clozeZoo();
         void set_animalCapacity(int _animalCapacity);
+        void add_enclosure();
 };
 
 #endif
