@@ -1,0 +1,90 @@
+#include "Animal.h"
+
+Animal::Animal(int weight, string species, string diet, string name, string favourite_treat){
+    this->fatigue == 0;
+    this->happiness == 0;
+    this->hunger == 0;
+    this->weight == weight;
+    this->species == species;
+    this->diet == diet;
+    this->name == name;
+    this->favourite_treat == favourite_treat;
+    this->posX == 0;
+    this->posY == 0;
+}
+
+Animal::Animal():Animal(0, "", "", "", ""){}
+
+void Animal::getFed(string food, int amountKg){
+    if (diet==food){
+        hunger -= amountKg;
+        hunger = max(hunger, 0);
+    }
+    
+    if (favourite_treat==food){
+        hunger -= amountKg;
+        hunger = max(hunger, 0);
+        happiness += amountKg;
+    }
+};
+
+void Animal::rest(int hours){
+    fatigue -= hours;
+    fatigue = max(fatigue, 0);
+}
+
+void Animal::set_fatigue(int fatigue){
+    this->fatigue = fatigue;
+}
+
+void Animal::set_hunger(int hunger){
+    this->hunger = hunger;
+}
+
+void Animal::set_weight(int weight){
+    this->weight = weight;
+}
+
+void Animal::set_fatigue(string species){
+    this->species = species;
+}
+
+void Animal::set_diet(string diet){
+    this->diet = diet;
+}
+
+void Animal::set_name(string name){
+    this->name = name;
+}
+
+void Animal::set_favourite_treat(string favourite_treat){
+    this->favourite_treat = favourite_treat;
+}
+
+int Animal::get_fatigue(){
+    return fatigue;
+}
+
+int Animal::get_happiness(){
+    return happiness;
+}
+
+int Animal::get_hunger(){
+    return hunger;
+}
+
+int Animal::get_weight(){
+    return weight;
+}
+
+string Animal::get_species(){
+    return species;
+}
+
+string Animal::get_name(){
+    return name;
+}
+
+string Animal::get_favourite_treat(){
+    return favourite_treat;
+}
