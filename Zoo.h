@@ -34,6 +34,7 @@ class Zoo {
         bool get_openStatus();
         void set_openStatus(bool _openStatus);
         void addAnimal(Animal* _animal);
+        void removeAnimal(string _nameChoose);
         void openZoo();
         void clozeZoo();
         void set_animalCapacity(int _animalCapacity);

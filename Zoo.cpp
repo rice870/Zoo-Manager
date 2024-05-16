@@ -1,3 +1,9 @@
+#include <string>
+#include <vector>
+#include <iostream>
+#include "Animal.h"
+#include "Person.h"
+#include "Enclosure.h"
 #include "Zoo.h"
 
 Zoo::Zoo() {
@@ -32,6 +38,12 @@ void Zoo::set_openStatus(bool _openStatus) {
 void Zoo::addAnimal(Animal* _animal) {
     animals.push_back(_animal);
 }
+
+void Zoo::releaseAnimal(string _nameChoose) {
+    
+    animals.remove();
+}
+
 void Zoo::openZoo() {
     openStatus = true;
 }
