@@ -1,3 +1,9 @@
+
+#include <string>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
 #include "Animal.h"
 
 Animal::Animal(int weight, string species, string diet, string name, string favourite_treat){
@@ -65,6 +71,15 @@ void Animal::set_favourite_treat(string favourite_treat){
     this->favourite_treat = favourite_treat;
 }
 
+void Animal::set_posX(int _posX) {
+    posX = _posX;
+}
+
+void Animal::set_posX(int _posy) {
+    posY = _posY;
+}
+
+
 int Animal::get_fatigue(){
     return fatigue;
 }
@@ -91,4 +106,12 @@ string Animal::get_name(){
 
 string Animal::get_favourite_treat(){
     return favourite_treat;
+}
+
+int Animal::get_posX() {
+    return posX;
+}
+
+int Animal::get_posY() {
+    return posY;
 }
