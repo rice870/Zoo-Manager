@@ -1,6 +1,3 @@
-#ifndef FACILITY_H
-#define FACILITY_H
-
 #include <string>
 #include <vector>
 #include <iostream>
@@ -20,20 +17,18 @@ using namespace std;
 
 class Facility{
     private:
-        string facilityName;
-        int facilityID;
+        string name;
+        int ID;
 
     public:
         Facility();
-        Facility(string name, int facilityID)
+        Facility(int name, int ID);
         string get_name();
-        int get_facilityID();
+        int get_ID();
 
         void set_name(string _name);
-        int set_facilityID(int _ID);
+        int set_ID(int _ID);
         
     
 
 };
-
-#endif
