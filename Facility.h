@@ -22,7 +22,7 @@ class Facility{
 
     public:
         Facility();
-        Facility(int name, int ID);
+        Facility(string name, int ID);
         string get_name();
         int get_ID();
 

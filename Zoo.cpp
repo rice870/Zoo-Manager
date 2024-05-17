@@ -1,3 +1,4 @@
+
 #include <string>
 #include <vector>
 #include <iostream>
@@ -33,7 +34,6 @@ Zoo::Zoo(string name, string location, int money, int daysOpen, int animalCapaci
     daysOpen = 0;
     enclosureCount = 0;
     animalCount = 0;
-    currentAnimals = 0;
 
 
 }
@@ -107,7 +107,6 @@ int Zoo::get_enclosureCount() {
 int Zoo::get_animalCount() {
     return animalCount;
 }
-
 
 
 

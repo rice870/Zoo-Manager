@@ -18,9 +18,9 @@ Facility::Facility() {
     ID = 0;
 }
 
-Facility::Facility(string name; int ID) {
+Facility::Facility(string name, int ID) {
     this->name = name;
-    this->ID = ID;
+    this->ID = ID; // ID should always be the number corresponding to how many enclosures there are eg. first facility has ID of 1, second has ID of 2, so on.
 }
 
 
