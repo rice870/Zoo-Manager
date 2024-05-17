@@ -28,8 +28,9 @@ class Zoo {
         int daysOpen; // Increments at the end of the loop in main.cpp, at the start of the new day
         vector<Enclosure*> enclosures; // The zoo will have a vector of all if its enclosures, each enclosure can be seperately called, enclosures will each contain a animal pointer vector.
         //The user should begin the game with one enclosure containing one animal.
-
+        vector<Visitor*> visitors;
         int animalCapacity; // In a later development, this should be able to be upgraded by the user.
+        int facilityCount;
         int enclosureCount;
         int animalCount; // Probably just counts all of the animals inside all of the enclosures
         //int cameraPosX;
@@ -44,6 +45,8 @@ class Zoo {
         void addAnimal(Enclosure* enclosure, Animal* animal);
         void releaseAnimal(int _IDchoose); 
         int countAnimals();
+        int countFacilities();
+        int countEnclosures();
 
 
 

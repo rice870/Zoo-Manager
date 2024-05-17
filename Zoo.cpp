@@ -66,6 +66,22 @@ int countAnimals() {
     return count; // this function's output should always be assigned to the attribute animalCount
 }
 
+int countFacilities() {
+    int count = 0;
+    for(int i = 0; i < enclosureCount; i++) { // This will also include the total number of, say for example, shops, later on.
+        count++; // Currently, countFacilities() and countEnclosures() do the same thing, as enclosure is the only facility.
+    }
+    return count;
+
+}
+
+int countEnclosures() {
+    int count = 0;
+    for(int i = 0; i < enclosureCount; i++) { 
+        count++; 
+    }
+    return count;
+}
 
 string Zoo::get_name() {
     return name:
