@@ -39,10 +39,11 @@ class Zoo {
 
     public:
         Zoo();
-        Zoo(string _name, string _location, int _money, int _daysOpen, int _animalCapacity);
-        void addEnclosure(Enclosure* enclosure);
+        Zoo(string name, string location, int money, int daysOpen, int animalCapacity);
+        void addEnclosure(Enclosure enclosure);
         void addAnimal(Enclosure* enclosure, Animal* animal);
         void releaseAnimal(int _IDchoose); 
+        int countAnimals();
 
 
 
@@ -52,7 +53,7 @@ class Zoo {
         int get_money();
         int get_daysOpen();
         vector<Enclosure*> get_enclosures(); // Unsure if this is correct, it probably is, but it might be a bit more complicated of a getter than the other attributes because its a vector
-        vector<Animal*> get_animals();
+        //vector<Animal*> get_animals();
         int get_animalCapacity();
         int get_enclosureCount();
         int get_animalCount();
