@@ -1,24 +1,39 @@
 #ifndef PERSON_H
 #define PERSON_H
 
-#include <iostream>
 #include <string>
-#include <math.h>
-using namespace std;
 
-class Person{
-    protected:
-        double posX;
-        double posY;
-        double speed;
-        string role;
-    public:
-        Person(double posX, double posY, double speed, string role);
-        Person();
-        void Go(double goX, double goY);
-        double get_posX();
-        double get_posY();
-        void set_speed(double speed);
+class Person {
+protected:
+    double posX;    // X position of the person in the zoo
+    double posY;    // Y position of the person in the zoo
+    double speed;   // Movement speed of the person
+    std::string role; // Role of the person (e.g., staff, visitor)
+
+public:
+    // Constructor to initialize a Person object with specific values
+    Person(double posX, double posY, double speed, std::string role);
+
+    // Default constructor
+    Person();
+
+    // Method to move the person to a new position
+    void Go(double goX, double goY);
+
+    // Getter methods
+    double getPosX() const;   // Get the X position
+    double getPosY() const;   // Get the Y position
+
+    // Setter method for speed
+    void setSpeed(double speed);
+
+    // Getter method for speed (optional, if needed)
+    double getSpeed() const;
+
+    // Setter and Getter methods for role (optional, if needed)
+    void setRole(std::string role);
+    std::string getRole() const;
 };
 
-#endif
+#endif // PERSON_H
+
