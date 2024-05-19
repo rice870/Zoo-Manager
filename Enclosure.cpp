@@ -49,3 +49,7 @@ Enclosure::Enclosure(string name, int ID, int enclosureCapacity, string speciesT
     this->speciesType = speciesType;
     enclosedCount = 0;
 }
+
+int Enclosure::getSize(){
+    return animals.size();
+}

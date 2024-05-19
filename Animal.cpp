@@ -3,7 +3,8 @@
 #include <algorithm> // For std::max
 
 // Constructor to initialize an Animal object with specific values
-Animal::Animal(int weight, string species, string diet, string name, string favourite_treat) {
+Animal::Animal(int ID, int weight, string species, string diet, string name, string favourite_treat) {
+    this->ID = ID;
     this->fatigue = 0;  // Initial fatigue level is set to 0
     this->happiness = 0;  // Initial happiness level is set to 0
     this->hunger = 0;  // Initial hunger level is set to 0
@@ -17,7 +18,7 @@ Animal::Animal(int weight, string species, string diet, string name, string favo
 }
 
 // Default constructor to initialize an Animal object with default values
-Animal::Animal() : Animal(0, "", "", "", "") {}
+Animal::Animal() : Animal(0, 0, "", "", "", "") {}
 
 // Method to feed the animal
 void Animal::getFed(string food, int amountKg) {
@@ -110,4 +111,8 @@ int Animal::getPosX() const {
 
 int Animal::getPosY() const {
     return posY;  // Return the Y position
+}
+
+int Animal::getID() const {
+    return this->ID;
 }

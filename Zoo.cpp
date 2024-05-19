@@ -23,8 +23,8 @@ Zoo::Zoo() {
     animalCapacity = 0;
     enclosureCount = 0;
     animalCount = 0;
-    currentAnimals = 0;
 }
+
 Zoo::Zoo(string name, string location, int money, int daysOpen, int animalCapacity) {
     this->name = name;
     this->location = location;
@@ -34,39 +34,41 @@ Zoo::Zoo(string name, string location, int money, int daysOpen, int animalCapaci
     daysOpen = 0;
     enclosureCount = 0;
     animalCount = 0;
-
-
 }
 
 
-
-
-
-void Zoo::addEnclosure(Enclosure enclosure) {
-    enclosures->push_back(enclosure);
+void Zoo::addEnclosure(Enclosure* enclosure) {
+    enclosures.push_back(enclosure);
     enclosureCount++;
 }
-// void addAnimal(Enclosure* enclosure, Animal* animal); A bit more involved, this might have to go in the enclosure class
+
+void Zoo::addAnimal(Enclosure* enclosure, Animal* animal){
+    enclosure->addAnimal(animal);
+    allAnimals.push_back(animal);
+    animalCount++;
+}
 
 
 
-//void releaseAnimal(int _IDchoose) {
-//    for(int i = 0; i < animalCount; i++) {
-//        if(get_ID() == _IDchoose) {
-//            
-//        }
-//    }   
-//}
 
-int countAnimals() {
+
+void Zoo::releaseAnimal(int _IDchoose) {
+    for(int i = 0; i < animalCount; i++) {
+        if(allAnimals[i]->getID() == _IDchoose) {
+            
+        }
+    }   
+}
+
+int Zoo::countAnimals() {
     int count = 0;
     for(int i = 0; i < enclosureCount; i++) {
-        count += *(enclosures[i]).size();
+        count += enclosures[i]->getSize();
     }
     return count; // this function's output should always be assigned to the attribute animalCount
 }
 
-int countFacilities() {
+int Zoo::countFacilities() {
     int count = 0;
     for(int i = 0; i < enclosureCount; i++) { // This will also include the total number of, say for example, shops, later on.
         count++; // Currently, countFacilities() and countEnclosures() do the same thing, as enclosure is the only facility.
@@ -75,7 +77,7 @@ int countFacilities() {
 
 }
 
-int countEnclosures() {
+int Zoo::countEnclosures() {
     int count = 0;
     for(int i = 0; i < enclosureCount; i++) { 
         count++; 
@@ -84,7 +86,7 @@ int countEnclosures() {
 }
 
 string Zoo::get_name() {
-    return name:
+    return name;
 }
 string Zoo::get_location() {
     return location;

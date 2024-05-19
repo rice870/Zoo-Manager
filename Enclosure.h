@@ -45,6 +45,8 @@ class Enclosure : public Facility {
         
         void addAnimal(Animal* animal);
 
+        int getSize();
+
 
         //Enclosure(int posX, int posY, int enclosure_capacity);
         // void get_visited();

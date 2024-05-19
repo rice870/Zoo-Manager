@@ -20,10 +20,11 @@ protected:
     string diet;           // Diet of the animal
     string name;           // Name of the animal
     string favourite_treat;// Favourite treat of the animal
+    int ID;
 
 public:
     // Constructor to initialize an Animal object
-    Animal(int weight, string species, string diet, string name, string favourite_treat);
+    Animal(int ID, int weight, string species, string diet, string name, string favourite_treat);
 
     // Default constructor
     Animal();
@@ -56,6 +57,7 @@ public:
     string getFavouriteTreat() const;
     int getPosX() const;
     int getPosY() const;
+    int getID() const;
 };
 
 #endif // ANIMAL_H

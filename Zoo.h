@@ -34,14 +34,14 @@ class Zoo {
         int enclosureCount;
         int animalCount; // Probably just counts all of the animals inside all of the enclosures
         //int cameraPosX;
-        //vector<Animal*> animals;
+        vector<Animal*> allAnimals; // Animals will have 
         //bool openStatus;
 
 
     public:
         Zoo();
         Zoo(string name, string location, int money, int daysOpen, int animalCapacity);
-        void addEnclosure(Enclosure enclosure);
+        void addEnclosure(Enclosure* enclosure);
         void addAnimal(Enclosure* enclosure, Animal* animal);
         void releaseAnimal(int _IDchoose); 
         int countAnimals();
