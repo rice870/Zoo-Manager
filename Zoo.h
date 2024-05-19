@@ -26,7 +26,6 @@ class Zoo {
 
         int money; // Lets say the user begins the game with $500 or so.
         int daysOpen; // Increments at the end of the loop in main.cpp, at the start of the new day
-        vector<Enclosure*> enclosures; // The zoo will have a vector of all if its enclosures, each enclosure can be seperately called, enclosures will each contain a animal pointer vector.
         //The user should begin the game with one enclosure containing one animal.
         vector<Visitor*> visitors;
         int animalCapacity; // In a later development, this should be able to be upgraded by the user.
@@ -47,6 +46,7 @@ class Zoo {
         int countAnimals();
         int countFacilities();
         int countEnclosures();
+        vector<Enclosure*> enclosures; // The zoo will have a vector of all if its enclosures, each enclosure can be seperately called, enclosures will each contain a animal pointer vector.
 
 
 

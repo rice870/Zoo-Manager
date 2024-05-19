@@ -1,3 +1,6 @@
+#ifndef FACILITY_H
+#define FACILITY_H
+
 #include <string>
 #include <vector>
 #include <iostream>
@@ -32,3 +35,5 @@ class Facility{
     
 
 };
+
+#endif

@@ -44,8 +44,13 @@ class Enclosure : public Facility {
         Enclosure(string name, int ID, int enclosureCapacity, string speciesType);
         
         void addAnimal(Animal* animal);
-
         int getSize();
+        string get_name();
+        int get_ID();
+        void set_name(string _name);
+        void set_ID(int _ID);
+
+
 
 
         //Enclosure(int posX, int posY, int enclosure_capacity);

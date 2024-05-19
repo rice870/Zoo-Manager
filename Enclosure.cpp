@@ -55,3 +55,20 @@ void Enclosure::addAnimal(Animal* a){
         animals.push_back(a);
     }
 }
+
+string Enclosure::get_name() {
+    return name;
+
+}
+
+int Enclosure::get_ID() {
+    return ID;
+}
+
+void Enclosure::set_name(string _name) {
+    name = _name;
+}
+
+void Enclosure::set_ID(int _ID) {
+    ID = _ID;
+}
