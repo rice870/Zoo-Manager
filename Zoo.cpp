@@ -42,15 +42,22 @@ void Zoo::addEnclosure(Enclosure* enclosure) {
     enclosureCount++;
 }
 
-void Zoo::addAnimal(Enclosure* enclosure, Animal* animal){
-    enclosure->addAnimal(animal);
-    allAnimals.push_back(animal);
-    animalCount++;
+int Zoo::generateUniqueID() {
+    int id;
+
+    while (find(usedAnimalIDs.begin(), usedAnimalIDs.end(), id) != usedAnimalIDs.end()){
+        id = std::rand(); // Generate a random ID
+    }
+
+    usedAnimalIDs.push_back(id); // Mark the ID as used
+    return id; // Return the unique ID
 }
-
-
-
-
+void Zoo::addAnimal(Enclosure* enclosure, Animal* animal) {
+    int id = generateUniqueID();
+    animal->setID(id); // Set the unique ID to the animal
+    allAnimals.push_back(animal);
+    enclosure->addAnimal(animal); // Add the animal to the enclosure
+}
 
 void Zoo::releaseAnimal(int _IDchoose) {
     for(int i = 0; i < animalCount; i++) {
@@ -100,6 +107,9 @@ int Zoo::get_daysOpen() {
 vector<Enclosure*> Zoo::get_enclosures() {
     return enclosures;
 } 
+vector<Animal*> Zoo::get_animals(){
+    return allAnimals;
+}
 int Zoo::get_animalCapacity() {
     return animalCapacity;
 }

@@ -29,6 +29,7 @@ class Zoo {
         vector<Enclosure*> enclosures; // The zoo will have a vector of all if its enclosures, each enclosure can be seperately called, enclosures will each contain a animal pointer vector.
         //The user should begin the game with one enclosure containing one animal.
         vector<Visitor*> visitors;
+        vector<int> usedAnimalIDs;
         int animalCapacity; // In a later development, this should be able to be upgraded by the user.
         int facilityCount;
         int enclosureCount;
@@ -42,6 +43,7 @@ class Zoo {
         Zoo();
         Zoo(string name, string location, int money, int daysOpen, int animalCapacity);
         void addEnclosure(Enclosure* enclosure);
+        int generateUniqueID();
         void addAnimal(Enclosure* enclosure, Animal* animal);
         void releaseAnimal(int _IDchoose); 
         int countAnimals();
@@ -56,7 +58,7 @@ class Zoo {
         int get_money();
         int get_daysOpen();
         vector<Enclosure*> get_enclosures(); // Unsure if this is correct, it probably is, but it might be a bit more complicated of a getter than the other attributes because its a vector
-        //vector<Animal*> get_animals();
+        vector<Animal*> get_animals();
         int get_animalCapacity();
         int get_enclosureCount();
         int get_animalCount();

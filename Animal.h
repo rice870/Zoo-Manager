@@ -24,7 +24,7 @@ protected:
 
 public:
     // Constructor to initialize an Animal object
-    Animal(int ID, int weight, string species, string diet, string name, string favourite_treat);
+    Animal(int weight, string species, string diet, string name, string favourite_treat);
 
     // Default constructor
     Animal();
@@ -46,6 +46,7 @@ public:
     void setFavouriteTreat(string favourite_treat);
     void setPosX(int posX);
     void setPosY(int posY);
+    void setID(int ID);
 
     // Getter methods
     int getFatigue() const;

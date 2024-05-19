@@ -9,6 +9,8 @@ Panda::Panda(int weight, std::string species, std::string diet, std::string name
     // Additional initialization specific to Panda
 }
 
+Panda::Panda(int weight, string name):Panda(weight, "Panda", "Bamboo", name, "Bamboo"){}
+
 // Default constructor
 Panda::Panda() : Animal() {
     // Default initialization specific to Panda

@@ -10,11 +10,14 @@
 
 #include "Animal.h"
 #include <string>
+using namespace std;
 
 class Panda : public Animal {
 public:
     // Constructor to initialize a Panda object
     Panda(int weight, std::string species, std::string diet, std::string name, std::string favourite_treat);
+
+    Panda(int weight, string name);
     
     // Default constructor
     Panda();
