@@ -52,13 +52,13 @@ void Zoo::addAnimal(Enclosure* enclosure, Animal* animal){
 
 
 
-void Zoo::releaseAnimal(int _IDchoose) {
-    for(int i = 0; i < animalCount; i++) {
-        if(allAnimals[i]->getID() == _IDchoose) {
-            
-        }
-    }   
-}
+//void Zoo::releaseAnimal(int _IDchoose) {
+//    for(int i = 0; i < animalCount; i++) {
+//        if(allAnimals[i]->getID() == _IDchoose) {
+//            
+//        }/
+//    }   
+//}
 
 int Zoo::countAnimals() {
     int count = 0;
