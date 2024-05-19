@@ -1,7 +1,8 @@
 #include "Elephant.h"
 #include <iostream>
+#include <string>
+#include <vector>
 
-using namespace std;
 
 // Constructor to initialize an Elephant object
 Elephant::Elephant(int weight, std::string species, std::string diet, std::string name, std::string favourite_treat)
