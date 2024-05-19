@@ -22,8 +22,8 @@ using namespace std;
 
 //Enclosure::Enclosure():Enclosure(0, 0, 0){}
 
-void Enclosure::add_animal(Animal* a){
-    if (animals.size() <= enclosure_capacity){
+void Enclosure::addAnimal(Animal* a){
+    if (animals.size() < enclosureCapacity){
         animals.push_back(a);
     }
 }
@@ -48,11 +48,4 @@ Enclosure::Enclosure(string name, int ID, int enclosureCapacity, string speciesT
     this->enclosureCapacity = enclosureCapacity;
     this->speciesType = speciesType;
     enclosedCount = 0;
-}
-
-void Enclosure::addAnimal(Animal* animal) {
-    set_animalCount(countAnimals());
-    if(enclosureCapacity < animals.size() || get_animalCount < animals.size()) {
-        animals.push_back(animal);
-    }
 }

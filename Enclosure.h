@@ -34,6 +34,8 @@ class Enclosure : public Facility {
         vector<Animal*> animals;
         string speciesType;
         int enclosedCount;
+        int ID;
+        string name;
 
 
 
