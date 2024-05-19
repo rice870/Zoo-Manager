@@ -1,0 +1,81 @@
+To-do list for Zoo Manager:
+
+
+Problem: We are biting off a bit more than we can chew, and we should try to complete this in the time we have left. What we have in the plan is fine, and we should try and get the basics to work first, and add to that after we have a working model of the program.
+
+How we can resolve this: Prioritise, and get the basics working first, then go from there.
+
+
+Phase 1 (Due 18th-19th May)
+
+Files we should have:
+
+- main.cpp
+- Zoo.cpp 
+- Zoo.h
+- Animal.cpp
+- Animal.h
+- Panda.h
+- Panda.cpp
+- Kangaroo.h
+- Kangaroo.cpp
+- Elephant.h
+- Elephant.cpp
+- Tortoise.h
+- Tortoise.cpp
+- Kiwi.h
+- Kiwi.cpp
+- Enclosure.h
+- Enclosure.cpp
+- Facility.h
+- Facility.cpp
+- Person.cpp
+- Person.h
+- Visitor.cpp
+- Visitor.h
+
+Maybe this should first be built in a different branch, reusing the code we already have and modifying it to fit this phase. Once we have a working version of this, we can add the new files to the main branch. Just so we don't discard current files we have that may be useful going forward.
+
+Class heirarchy:
+
+Zoo -> Facility -> Enclosure (Enclosure is the only facility for now, but we can add more facilities such as gift shops, resturants, etc, if there's time)
+
+Enclosures contain a vector of animal objects, animal objects cannot exist in the zoo without enclosures.
+
+Animal -> <all species of animal>
+
+Person -> Visitor (We can add more people later on, such as staff, etc)
+
+
+For the end goal of Phase 1, the user should be able to do the following things:
+
+- Use the terminal to create a zoo with attributes set by the user (name, location, size, etc)
+- The user starts with a budget of cash, and one animal enclosure, and must build up their zoo to earn more cash.
+- Create enclosures, and put zoo animals in those enclosures. Enclosures and animals cost money.
+- The user can then start the day, opening the zoo for the first time and starting the day.
+- During each day, visitors come to the zoo to see the animals (number of visitors can be random or static for now). Every time an enclosure is visited, the profit for that day increases.
+- When the day ends, the screen should show how many times each enclosure has been visited, and the profits for that day.
+- Money can be spent to feed the animals, increasing their health stat (incorperates fatigue + hunger stats). Healthier animals generate more money, (eventually it can be made so that unhealthier animals decrease number of visitors each day). If an animal is fed their favourite food, they recieve a higher health boost. Health decreases over time if an animal is not fed.
+- At the end of each day, the user can buy more enclosures or more animals.
+- If the budget is ever at $0, it's game over (the game just restarts over and over again going day 1, day 2, day 3, etc, until budget is at 0. Perhaps a while loop can be used for this in main.cpp)
+
+Note this is just a simpler version of what we are making. We will upon this as time goes by.
+
+Possible future additions:
+
+- Number of visitors changing depending on animal health, ticket prices, etc.
+- Ability to buy ammenities for the zoo to increase number of visitors (resturants, gift shops, etc)
+- Ability to release animals from the zoo
+- Possibly other stuff, add to this or send a message in the group chat if there are any other ideas.
+
+Notes:
+
+- One of the rubric criteria on MyUni mentions writing and reading data from an external file. Maybe after we implement this first phase, we can give each person a ramdom name based on a list of names and attributes about a person stored in a file.
+- Test at several different stages of development, and add a text file of test results
+- We should also be using more comments while coding, as this is also a criteria and makes it easier for other group members to understand the code
+
+Please feel free to change this as you wish, if there's anything i've forgotten about.
+
+
+
+

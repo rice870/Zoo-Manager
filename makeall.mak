@@ -10,11 +10,11 @@ CXXFLAGS = -std=c++11 -Wall -Wextra
 
 # Executable name
 
-TARGET = ZooKeeper
+TARGET = zookeeper
 
 # Source files
 
-SRCS = main.cpp Zoo.cpp Kangaroo.cpp Panda.cpp Animal.cpp Zookeeper.cpp Staff.cpp Person.cpp 
+SRCS = main.cpp Zoo.cpp Animal.cpp Panda.cpp Kangaroo.cpp Elephant.cpp Tortoise.cpp Kiwi.cpp Enclosure.cpp Facility.cpp Person.cpp Visitor.cpp 
 
 # Build and run tests
 

@@ -1,42 +1,54 @@
 #include "Person.h"
+#include <cmath> // For math functions
 
-Person::Person(double posX, double posY, double speed, string role){
-   this->posX == posX;
-   this->posY == posY;
-   this->speed == speed;
-   this->role == role;
+// Constructor to initialize a Person object with specific values
+Person::Person(double posX, double posY, double speed, std::string role)
+    : posX(posX), posY(posY), speed(speed), role(role) {}
+
+// Default constructor
+Person::Person() : Person(0.0, 0.0, 0.0, "") {}
+
+// Method to move the person to a new position
+void Person::Go(double goX, double goY) {
+    // Calculate the distance to move
+    double distance = sqrt(pow(goX - posX, 2) + pow(goY - posY, 2));
+
+    // Move the person to the new position based on speed
+    if (distance <= speed) {
+        posX = goX;
+        posY = goY;
+    } else {
+        posX += (goX - posX) * (speed / distance);
+        posY += (goY - posY) * (speed / distance);
+    }
 }
 
-Person::Person():Person(0,0,5,""){}
-
-void Person::Go(double goX, double goY){
-   double xDiff = goX-posX;
-   double yDiff = goY-posY;
-   double newSpeed;
-   if (sqrt( xDiff*xDiff + yDiff*yDiff ) > speed){
-         double angle = atan(yDiff/xDiff);
-
-         // these basically adjust for any of the 4 quadrants the desired spot could be in relative to the Person object
-         newSpeed = speed * (!((yDiff < 0) && (xDiff < 0)) * 2 - 1);
-         newSpeed = newSpeed * (!((yDiff > 0) && (xDiff < 0)) * 2 - 1);
-
-         // it'll move toward the desired location, scaled by it's speed
-         posX += newSpeed * cos(angle);
-         posY += newSpeed * sin(angle);
-   } else {
-         // if the desired location is within a distance of speed, it will instantly go there
-         posX = goX;
-         posY = goY;
-   }
+// Getter methods
+double Person::getPosX() const {
+    return posX;  // Return the X position
 }
 
-double Person::get_posX(){
-   return posX;
-}
-double Person::get_posY(){
-   return posY;
+double Person::getPosY() const {
+    return posY;  // Return the Y position
 }
 
-void Person::set_speed(double speed){
-   this->speed = speed;
+// Setter method for speed
+void Person::setSpeed(double speed) {
+    this->speed = speed;  // Set the movement speed
 }
+
+// Getter method for speed
+double Person::getSpeed() const {
+    return speed;  // Return the movement speed
+}
+
+// Setter method for role
+void Person::setRole(std::string role) {
+    this->role = role;  // Set the role
+}
+
+// Getter method for role
+std::string Person::getRole() const {
+    return role;  // Return the role
+}
+
