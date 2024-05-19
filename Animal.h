@@ -23,7 +23,8 @@ class Animal {
         Animal(int weight, string species, string diet, string name, string favourite_treat);
         Animal();
         virtual void getFed(string food, int amountKg);
-        virtual void rest(int hours);
+        virtual void rest();
+        void get_visited();
 
         /* we need to figure out how treats will differ from food
         virtual void receivefavourite_treat(string treat) */ 
@@ -34,6 +35,8 @@ class Animal {
         void set_diet(string diet);
         void set_name(string name);
         void set_favourite_treat(string favourite_treat);
+        void set_posX(int _posX);
+        void set_posY(int _posY);
         int get_fatigue();
         int get_happiness();
         int get_hunger();
@@ -41,6 +44,8 @@ class Animal {
         string get_species();
         string get_name();
         string get_favourite_treat();
+        int get_posX();
+        int get_posY();
 };
 
 #endif

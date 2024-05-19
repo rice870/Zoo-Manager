@@ -35,8 +35,7 @@ void Animal::getFed(string food, int amountKg){
 };
 
 void Animal::rest(){
-    fatigue -= hours;
-    fatigue = max(fatigue, 0);
+    fatigue = 0;
 }
 
 void Animal::get_visited() {
@@ -75,7 +74,7 @@ void Animal::set_posX(int _posX) {
     posX = _posX;
 }
 
-void Animal::set_posX(int _posy) {
+void Animal::set_posY(int _posY) {
     posY = _posY;
 }
 
