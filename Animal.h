@@ -14,7 +14,8 @@ protected:
     int happiness;         // Happiness level of the animal
     int hunger;            // Hunger level of the animal
     int weight;            // Weight of the animal
-    int posX, posY;        // Position of the animal within the zoo
+    int posX;
+    int posY;        // Position of the animal within the zoo
     string species;        // Species of the animal
     string diet;           // Diet of the animal
     string name;           // Name of the animal

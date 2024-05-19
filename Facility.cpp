@@ -29,7 +29,7 @@ string Facility::get_name() {
 }
 
 int Facility::get_ID() {
-    return ID:
+    return ID;
 }
 
 void Facility::set_name(string _name) {

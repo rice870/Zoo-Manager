@@ -27,7 +27,7 @@ class Facility{
         int get_ID();
 
         void set_name(string _name);
-        int set_ID(int _ID);
+        void set_ID(int _ID);
         
     
 
