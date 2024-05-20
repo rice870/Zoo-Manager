@@ -14,7 +14,6 @@
 #include "Kiwi.h"
 #include "Enclosure.h"
 #include "Person.h"
-#include "Visitor.h"
 
 using namespace std;
 
@@ -32,7 +31,7 @@ class Facility{
         void set_name(string _name);
         void set_ID(int _ID);
 
-        virtual int get_visited(){}   
+        virtual int get_visited(){return 0;}   
 
 };
 

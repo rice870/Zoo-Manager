@@ -30,6 +30,7 @@ class ZooTest{
             for (int i=0; i<10; i++){
                 z.releaseAnimal(z.get_animals()[0]->getID());
             }
+            cout << z.get_animals().size() << endl;
         }
 
     public:

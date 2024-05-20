@@ -27,7 +27,7 @@ class Zoo {
         int money; // Lets say the user begins the game with $500 or so.
         int daysOpen; // Increments at the end of the loop in main.cpp, at the start of the new day
         //The user should begin the game with one enclosure containing one animal.
-        vector<Visitor*> visitors;
+        //vector<Visitor*> visitors;
         vector<int> usedAnimalIDs;
         int animalCapacity; // In a later development, this should be able to be upgraded by the user.
         int facilityCount;
