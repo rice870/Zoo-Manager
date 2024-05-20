@@ -1,4 +1,4 @@
-[# Makefile
+# Makefile
 
 # Compiler
 
@@ -28,7 +28,8 @@ all:
 
 # Clean rule
 
-.PHONY: clean
+.PHONY:
+	clean
 
 clean:
 

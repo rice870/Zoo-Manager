@@ -23,6 +23,7 @@ Zoo::Zoo() {
     animalCapacity = 0;
     enclosureCount = 0;
     animalCount = 0;
+    bamboo = 0;
 }
 
 Zoo::Zoo(string name, string location, int money, int daysOpen, int animalCapacity) {
@@ -34,6 +35,7 @@ Zoo::Zoo(string name, string location, int money, int daysOpen, int animalCapaci
     daysOpen = 0;
     enclosureCount = 0;
     animalCount = 0;
+    bamboo = 0;
 }
 
 
@@ -114,6 +116,8 @@ int Zoo::countEnclosures() {
     return count;
 }
 
+
+
 string Zoo::get_name() {
     return name;
 }
@@ -145,7 +149,9 @@ int Zoo::get_animalCount() {
     return animalCount;
 }
 
-
+int Zoo::get_bamboo() {
+    return bamboo;
+}
 
 void Zoo::set_name(string _name) {
     name = _name;
@@ -169,7 +175,9 @@ void Zoo::set_animalCount(int _animalCount) {
     animalCount = _animalCount;
 } 
 
-
+void Zoo::set_bamboo(int _bamboo) {
+    bamboo = _bamboo;
+}
 //vector<Animal*> Zoo::get_animals() { Think this goes in enclosures
 //    return animals;
 //}
