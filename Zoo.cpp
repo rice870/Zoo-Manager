@@ -53,6 +53,7 @@ int Zoo::generateUniqueID() {
     return id; // Return the unique ID
 }
 void Zoo::addAnimal(Enclosure* enclosure, Animal* animal) {
+    cout << "Welcome " << animal->getName() << "!";
     int id = generateUniqueID();
     animal->setID(id); // Set the unique ID to the animal
     allAnimals.push_back(animal);
