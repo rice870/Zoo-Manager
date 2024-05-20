@@ -63,7 +63,11 @@ void Zoo::addAnimal(Enclosure* enclosure, Animal* animal) {
 void Zoo::releaseAnimal(int _IDchoose) {
     for(int i = 0; i < animalCount; i++) {
         if(allAnimals[i]->getID() == _IDchoose) {
-            
+            allAnimals.erase(allAnimals.begin()+i);
+            animalCount--;
+            for (int j = 0; j < enclosureCount; j++) {
+                enclosures[j]->removeAnimal(allAnimals[i]);
+            }
         }
     }   
 }

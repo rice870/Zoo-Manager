@@ -22,11 +22,7 @@ using namespace std;
 
 //Enclosure::Enclosure():Enclosure(0, 0, 0){}
 
-void Enclosure::addAnimal(Animal* a){
-    if (animals.size() < enclosureCapacity){
-        animals.push_back(a);
-    }
-}
+
 
 //void Enclosure::get_visited(){
 //    for (int i=0;i<animals.size();i++){
@@ -52,4 +48,36 @@ Enclosure::Enclosure(string name, int ID, int enclosureCapacity, string speciesT
 
 int Enclosure::getSize(){
     return animals.size();
+}
+
+void Enclosure::addAnimal(Animal* a){
+    if (animals.size() < enclosureCapacity){
+        animals.push_back(a);
+        enclosedCount++;
+    }
+}
+
+void Enclosure::removeAnimal(Animal* a){
+    vector<Animal*>::iterator animalToDelete = find(animals.begin(), animals.end(), a);
+    if (animalToDelete != animals.end()){
+        animals.erase(animalToDelete);
+        enclosedCount--;
+    }
+}
+
+string Enclosure::get_name() {
+    return name;
+
+}
+
+int Enclosure::get_ID() {
+    return ID;
+}
+
+void Enclosure::set_name(string _name) {
+    name = _name;
+}
+
+void Enclosure::set_ID(int _ID) {
+    ID = _ID;
 }

@@ -3,7 +3,7 @@
 
 #include "Zoo.h"
 #include "Animal.h"
-#include "Panda.h"
+//#include "Panda.h"
 #include "Kangaroo.h"
 #include "Elephant.h"
 #include "Tortoise.h"
@@ -44,8 +44,14 @@ class Enclosure : public Facility {
         Enclosure(string name, int ID, int enclosureCapacity, string speciesType);
         
         void addAnimal(Animal* animal);
-
+        void removeAnimal(Animal* animal);
         int getSize();
+        string get_name();
+        int get_ID();
+        void set_name(string _name);
+        void set_ID(int _ID);
+
+
 
 
         //Enclosure(int posX, int posY, int enclosure_capacity);
