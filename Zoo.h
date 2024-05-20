@@ -36,6 +36,7 @@ class Zoo {
         //int cameraPosX;
         //vector<Animal*> allAnimals; // Animals will have 
         //bool openStatus;
+        int bamboo;
 
 
     public:
@@ -63,6 +64,7 @@ class Zoo {
         int get_animalCapacity();
         int get_enclosureCount();
         int get_animalCount();
+        int get_bamboo();
 
 
         void set_name(string _name);
@@ -73,6 +75,7 @@ class Zoo {
         void set_animalCapacity(int _animalCapacity);
         void set_enclosureCount(int _enclosureCount); 
         void set_animalCount(int _animalCount); 
+        void set_bamboo(int _bamboo);
 
 
 };

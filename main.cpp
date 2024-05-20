@@ -9,7 +9,7 @@
 #include "Facility.h"
 //#include "Kangaroo.h"
 //#include "Kiwi.h"
-//#include "Panda.h"
+#include "Panda.h"
 //#include "Person.h"
 //#include "Staff.h"
 //#include "Tortoise.h"
@@ -42,12 +42,14 @@ int main() {
             std::cout << "You have $" << z.get_money() << std::endl; 
             std::cout << "Press 1 to begin Day " << z.get_daysOpen() + 1 << std::endl;
             std::cout << "Press 2 to enter the shop" << std::endl;
-            std::cout << "Press 3 to view your animals and enclosures" << std::endl;
+            std::cout << "Press 3 to feed and view your animals" << std::endl;
             std::cin >> userSelect;
 
             switch (userSelect) {
                 case 1:
+                    // starts game, populates zoo with people
                     break;
+
                 case 2:
                     while(true) {
                         std::cout << "From the shop, you can buy animal food, new animals, and new facilities such as enclosures." << std::endl;
@@ -57,7 +59,28 @@ int main() {
                         std::cin >> userSelect;
                         switch (userSelect) {
                             case 1:
-                                std::cout << "food" << std::endl;
+                                while(true) {
+                                    std::cout << "Animal food:" << std::endl;
+                                    std::cout << "Press 1 to buy bamboo (For pandas) | Price: $5" << std::endl;
+                                    std::cout << "Press 6 to exit the shop" << std::endl; 
+                                    std::cin >> userSelect;
+                                    switch(userSelect) {
+                                        case 1:
+                                            if(z.get_money() >= 5) {
+                                                z.set_bamboo(z.get_bamboo() + 1);
+                                                z.set_money(z.get_money() - 5);
+                                                std::cout << "Bamboo purchased" << std::endl;
+                                            } else {
+                                                std::cout << "You do not have enough money for this item" << std::endl;
+                                            }
+                                            continue;
+                                        case 6:
+                                            break;
+                                        
+
+                                    }
+                                    break;
+                                }
                                 break;
                             case 2:
                                 break;
