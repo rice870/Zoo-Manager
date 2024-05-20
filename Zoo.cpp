@@ -53,22 +53,29 @@ int Zoo::generateUniqueID() {
     return id; // Return the unique ID
 }
 void Zoo::addAnimal(Enclosure* enclosure, Animal* animal) {
-    cout << "Welcome " << animal->getName() << "!";
+    cout << "Welcome " << animal->getName() << "!" << endl;
     int id = generateUniqueID();
     animal->setID(id); // Set the unique ID to the animal
     allAnimals.push_back(animal);
     enclosure->addAnimal(animal); // Add the animal to the enclosure
+    animalCount++;
 }
 
 void Zoo::releaseAnimal(int _IDchoose) {
+    //cout << "Release animal called for ID: " << _IDchoose << endl;
     for(int i = 0; i < animalCount; i++) {
         if(allAnimals[i]->getID() == _IDchoose) {
+            //cout << "Animal with ID: " << _IDchoose << " found!" << endl;
+            string animalName = allAnimals[i]->getName();
+            Animal* removedAnimal = allAnimals[i];
             allAnimals.erase(allAnimals.begin()+i);
             animalCount--;
             for (int j = 0; j < enclosureCount; j++) {
-                enclosures[j]->removeAnimal(allAnimals[i]);
+                enclosures[j]->removeAnimal(removedAnimal);
             }
+            cout << animalName << " removed from zoo!" << endl;
         }
+        
     }   
 }
 

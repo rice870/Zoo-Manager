@@ -1,9 +1,6 @@
 #ifndef FACILITY_H
 #define FACILITY_H
-<<<<<<< HEAD
-=======
 
->>>>>>> 8552d2789358943f553d9e4cd7ebd085d513e254
 #include <string>
 #include <vector>
 #include <iostream>
@@ -22,7 +19,7 @@
 using namespace std;
 
 class Facility{
-    private:
+    protected:
         string name;
         int ID;
 

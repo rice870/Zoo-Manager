@@ -27,6 +27,9 @@ class ZooTest{
             for (int i=0;i<10;i++){
                 cout << i << " | Name: " << z.get_animals()[i]->getName() << " | ID: " << z.get_animals()[i]->getID() << endl;
             }
+            for (int i=0; i<10; i++){
+                z.releaseAnimal(z.get_animals()[0]->getID());
+            }
         }
 
     public:

@@ -1,0 +1,60 @@
+Welcome Wang Wang!
+Welcome Funi!
+Welcome Bao Bao!
+Welcome Mei Mei!
+Welcome Tofu!
+Welcome Mochi!
+Welcome Bamboo!
+Welcome Ling Ling!
+Welcome Yuki!
+Welcome Oreo!
+0 | Name: Wang Wang | ID: 32759
+1 | Name: Funi | ID: 18467
+2 | Name: Bao Bao | ID: 26500
+3 | Name: Mei Mei | ID: 15724
+4 | Name: Tofu | ID: 29358
+5 | Name: Mochi | ID: 24464
+6 | Name: Bamboo | ID: 28145
+7 | Name: Ling Ling | ID: 16827
+8 | Name: Yuki | ID: 491
+9 | Name: Oreo | ID: 11942
+Release animal called for ID: 32759
+Animal with ID: 32759 found!
+Wang Wang removed from enclosure: Enclosure 1
+Wang Wang removed from zoo!
+Release animal called for ID: 18467
+Animal with ID: 18467 found!
+Funi removed from enclosure: Enclosure 1
+Funi removed from zoo!
+Release animal called for ID: 26500
+Animal with ID: 26500 found!
+Bao Bao removed from enclosure: Enclosure 1
+Bao Bao removed from zoo!
+Release animal called for ID: 15724
+Animal with ID: 15724 found!
+Mei Mei removed from enclosure: Enclosure 1
+Mei Mei removed from zoo!
+Release animal called for ID: 29358
+Animal with ID: 29358 found!
+Tofu removed from enclosure: Enclosure 1
+Tofu removed from zoo!
+Release animal called for ID: 24464
+Animal with ID: 24464 found!
+Mochi removed from enclosure: Enclosure 1
+Mochi removed from zoo!
+Release animal called for ID: 28145
+Animal with ID: 28145 found!
+Bamboo removed from enclosure: Enclosure 1
+Bamboo removed from zoo!
+Release animal called for ID: 16827
+Animal with ID: 16827 found!
+Ling Ling removed from enclosure: Enclosure 1
+Ling Ling removed from zoo!
+Release animal called for ID: 491
+Animal with ID: 491 found!
+Yuki removed from enclosure: Enclosure 1
+Yuki removed from zoo!
+Release animal called for ID: 11942
+Animal with ID: 11942 found!
+Oreo removed from enclosure: Enclosure 1
+Oreo removed from zoo!
