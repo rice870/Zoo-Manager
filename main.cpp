@@ -13,11 +13,14 @@
 //#include "Person.h"
 //#include "Staff.h"
 //#include "Tortoise.h"
-//#include "Visitor.h"
+#include "Visitor.h"
 //#include "Zookeeper.h"
+using namespace std;
 
 
 int main() {
+    int day=0;
+    int COST_PANDA = 200;
     std::string userName = "";
     std::string userLocation = "";
     std::string startingEnclosureName = "";
@@ -31,9 +34,15 @@ int main() {
     std::cout << "You have a starting budget of " << z.get_money() << ", spend it wisely to grow your zoo." << std::endl;
     std::cout << "You have been gifted a panda enclosure to begin. Enter the name of your starting enclosure: ";
     std::cin >> startingEnclosureName;
-    z.addEnclosure(new Enclosure(startingEnclosureName, 4, 5, "panda"));
+    z.addEnclosure(new Enclosure(startingEnclosureName, 4, 5, "Panda"));
     std::cout << "Your new enclosure " << z.enclosures[0]->get_name() << " was just created with an ID of " << z.enclosures[0]->get_ID() << std::endl;
     std::cout << "You've been gifted a panda for your zoo. Please name this panda: ";
     std::cin >> startingPandaName;
     z.addAnimal(z.get_enclosures()[0], new Panda(150, "Panda", "Omnivore", startingPandaName, "Bamboo"));
+    cout << "\nYou are now ready for your first day..." << endl;
+    /* while (true){
+        day++;
+        cout << "Day: " << day;
+        int visitors = ;
+    } */
 }

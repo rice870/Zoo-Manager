@@ -83,3 +83,12 @@ void Enclosure::set_name(string _name) {
 void Enclosure::set_ID(int _ID) {
     ID = _ID;
 }
+
+int Enclosure::get_visited(){
+    int expenditure;
+    for (int i=0;i<enclosedCount;i++){
+        animals[i]->getVisited();
+        expenditure += animals[i]->getVisitWorth();
+    }
+    return expenditure;
+}

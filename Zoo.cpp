@@ -40,6 +40,16 @@ Zoo::Zoo(string name, string location, int money, int daysOpen, int animalCapaci
 void Zoo::addEnclosure(Enclosure* enclosure) {
     enclosures.push_back(enclosure);
     enclosureCount++;
+    this->addFacility(enclosure);
+}
+
+void Zoo::addFacility(Facility* facility){
+    facilities.push_back(facility);
+    facilityCount++;
+}
+
+void Zoo::receiveMoney(int payment){
+    this->money += payment;
 }
 
 int Zoo::generateUniqueID() {
@@ -121,6 +131,9 @@ vector<Enclosure*> Zoo::get_enclosures() {
 } 
 vector<Animal*> Zoo::get_animals(){
     return allAnimals;
+}
+vector<Facility*> Zoo::getFacilities(){
+    return facilities;
 }
 int Zoo::get_animalCapacity() {
     return animalCapacity;

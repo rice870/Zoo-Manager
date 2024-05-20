@@ -15,6 +15,7 @@ Animal::Animal(int weight, string species, string diet, string name, string favo
     this->favourite_treat = favourite_treat;  // Set the favorite treat of the animal
     this->posX = 0;  // Initial X position is set to 0
     this->posY = 0;  // Initial Y position is set to 0
+    this->visitWorth = 5;
 
 }
 
@@ -120,4 +121,8 @@ int Animal::getPosY() const {
 
 int Animal::getID() const {
     return this->ID;
+}
+
+int Animal::getVisitWorth() const {
+    return this->visitWorth;
 }

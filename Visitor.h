@@ -2,6 +2,8 @@
 #define VISITOR_H
 
 #include "Person.h"
+#include "Zoo.h"
+#include "Facility.h"
 #include <string>
 
 class Visitor : public Person {
@@ -9,6 +11,7 @@ class Visitor : public Person {
         int age;                // Age of the visitor
         std::string preferences; // Preferences of the visitor
         std::string visitDate;   // Date of the visit
+        vector<Facility*> placesToVisit;
 
     public:
         // Constructor to initialize a Visitor object
@@ -18,9 +21,10 @@ class Visitor : public Person {
         Visitor();
 
         // Methods specific to Visitor
+        void chooseVisitSpots(Zoo* z);
         void enterZoo();
-        void visitExhibit();
-        void makePurchase();
+        void visitFacility(Zoo* z);
+        void makePurchase(Zoo* z, int payment);
 
         // Method to calculate the ticket price based on age
         double calculateTicketPrice() const;

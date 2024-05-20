@@ -31,8 +31,8 @@ class Facility{
 
         void set_name(string _name);
         void set_ID(int _ID);
-        
-    
+
+        virtual int get_visited(){}   
 
 };
 

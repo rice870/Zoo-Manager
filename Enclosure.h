@@ -21,10 +21,6 @@ using namespace std;
 
 class Enclosure : public Facility {
     private:
-
-
-
-
         //vector<Animal*> animals;
         //int enclosure_capacity;
         //int posX;
@@ -37,8 +33,6 @@ class Enclosure : public Facility {
         int ID;
         string name;
 
-
-
     public:
         Enclosure();
         Enclosure(string name, int ID, int enclosureCapacity, string speciesType);
@@ -50,6 +44,7 @@ class Enclosure : public Facility {
         int get_ID();
         void set_name(string _name);
         void set_ID(int _ID);
+        int get_visited();
 
 
 

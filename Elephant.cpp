@@ -2,11 +2,14 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 
 
 // Constructor to initialize an Elephant object
 Elephant::Elephant(int weight, std::string species, std::string diet, std::string name, std::string favourite_treat)
     : Animal(weight, species, diet, name, favourite_treat) {
+        visitWorth = 10;
     // Additional initialization specific to Elephant
 }
 
@@ -22,6 +25,14 @@ void Elephant::getFed(std::string food, int amountKg) {
         happiness += amountKg;  // Elephants are especially happy when they eat fruit
         cout << name << " the Elephant is especially happy with fruit!" << endl;
     }
+}
+
+void Elephant::getVisited(){
+    srand(time(nullptr));
+    if (rand() % 3 == 0){
+        this->trumpet();
+    }
+    this->fatigue++;
 }
 
 // Override the rest method

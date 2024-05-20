@@ -21,6 +21,7 @@ protected:
     string name;           // Name of the animal
     string favourite_treat;// Favourite treat of the animal
     int ID;
+    int visitWorth;
 
 public:
     // Constructor to initialize an Animal object
@@ -34,6 +35,7 @@ public:
 
     // Methods to perform actions
     virtual void getFed(string food, int amountKg);
+    virtual void getVisited(){}
     virtual void rest(int hours);
 
     // Setter methods
@@ -59,6 +61,7 @@ public:
     int getPosX() const;
     int getPosY() const;
     int getID() const;
+    int getVisitWorth() const;
 };
 
 #endif // ANIMAL_H

@@ -1,11 +1,14 @@
 #include "Kiwi.h"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
 // Constructor to initialize a Kiwi object
 Kiwi::Kiwi(int weight, std::string species, std::string diet, std::string name, std::string favourite_treat)
     : Animal(weight, species, diet, name, favourite_treat) {
+        visitWorth=6;
     // Additional initialization specific to Kiwi
 }
 
@@ -20,6 +23,13 @@ void Kiwi::getFed(std::string food, int amountKg) {
     if (food == "Insect") {
         happiness += amountKg;  // Kiwis are especially happy when they eat insects
         cout << name << " the Kiwi is especially happy with insects!" << endl;
+    }
+}
+
+void Kiwi::getVisited(){
+    srand(time(nullptr));
+    if (rand() % 6 == 0){
+        this->dig();
     }
 }
 

@@ -1,5 +1,7 @@
 #include "Panda.h"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -9,7 +11,9 @@ Panda::Panda(int weight, std::string species, std::string diet, std::string name
     // Additional initialization specific to Panda
 }
 
-Panda::Panda(int weight, string name):Panda(weight, "Panda", "Bamboo", name, "Bamboo"){}
+Panda::Panda(int weight, string name):Panda(weight, "Panda", "Bamboo", name, "Bamboo"){
+    visitWorth = 15;
+}
 
 // Default constructor
 Panda::Panda() : Animal() {
@@ -23,6 +27,14 @@ void Panda::getFed(std::string food, int amountKg) {
         happiness += amountKg;  // Pandas are especially happy when they eat bamboo
         cout << name << " the Panda is especially happy with bamboo!" << endl;
     }
+}
+
+void Panda::getVisited(){
+    srand(time(nullptr));
+    if (rand() % 4 == 0){
+        eatBamboo();
+    }
+    fatigue++;
 }
 
 // Override the rest method

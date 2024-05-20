@@ -1,6 +1,7 @@
 #include "Visitor.h"
 #include <iostream>
-
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 // Constructor to initialize a Visitor object
@@ -10,20 +11,33 @@ Visitor::Visitor(double posX, double posY, double speed, int age, std::string pr
 // Default constructor
 Visitor::Visitor() : Person(), age(0), preferences(""), visitDate("") {}
 
+void Visitor::chooseVisitSpots(Zoo* z){
+    int facility_count;
+    for (int i=0;i<z->getFacilities().size();i++){
+        if(rand() % 4 == 0){
+            facility_count++;
+            this->placesToVisit.push_back(z->getFacilities()[i]);
+        }
+    }
+}
+
 // Method for the visitor to enter the zoo
 void Visitor::enterZoo() {
     cout << "A visitor has entered the zoo." << endl;
 }
 
 // Method for the visitor to visit an exhibit
-void Visitor::visitExhibit() {
+void Visitor::visitFacility(Zoo *z) {
     cout << "A visitor is visiting an exhibit." << endl;
+    z->receiveMoney(placesToVisit[0]->get_visited());
+    placesToVisit.erase(placesToVisit.begin());
 }
 
 // Method for the visitor to make a purchase
-void Visitor::makePurchase() {
+/* void Visitor::makePurchase(Zoo *z, int payment) {
     cout << "A visitor has made a purchase." << endl;
-}
+    z->receiveMoney(payment)
+} */
 
 // Method to calculate the ticket price based on age
 double Visitor::calculateTicketPrice() const {

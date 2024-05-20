@@ -36,12 +36,15 @@ class Zoo {
         //int cameraPosX;
         vector<Animal*> allAnimals; // Animals will have 
         //bool openStatus;
+        vector<Facility*> facilities;
 
 
     public:
         Zoo();
         Zoo(string name, string location, int money, int daysOpen, int animalCapacity);
         void addEnclosure(Enclosure* enclosure);
+        void addFacility(Facility* facility);
+        void receiveMoney(int payment);
         int generateUniqueID();
         void addAnimal(Enclosure* enclosure, Animal* animal);
         void releaseAnimal(int _IDchoose); 
@@ -50,15 +53,13 @@ class Zoo {
         int countEnclosures();
         vector<Enclosure*> enclosures; // The zoo will have a vector of all if its enclosures, each enclosure can be seperately called, enclosures will each contain a animal pointer vector.
 
-
-
-
         string get_name();
         string get_location();
         int get_money();
         int get_daysOpen();
-        vector<Enclosure*> get_enclosures(); // Unsure if this is correct, it probably is, but it might be a bit more complicated of a getter than the other attributes because its a vector
+        vector<Enclosure*> get_enclosures(); 
         vector<Animal*> get_animals();
+        vector<Facility*> getFacilities();
         int get_animalCapacity();
         int get_enclosureCount();
         int get_animalCount();
