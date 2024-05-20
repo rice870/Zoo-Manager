@@ -38,28 +38,52 @@ int main() {
     z.addAnimal(z.get_enclosures()[0], new Panda(150, "Panda", "Omnivore", startingPandaName, "Bamboo"));
     while(z.get_money() > 0) {
         int userSelect = 0;
-        std::cout << "You have $" << z.get_money() << std::endl; 
-        std::cout << "Press 1 to begin Day " << z.get_daysOpen() + 1 << std::endl;
-        std::cout << "Press 2 to enter the shop" << std::endl;
-        std::cout << "Press 3 to view your animals and enclosures" << std::endl;
-        std::cin >> userSelect;
-        while(userSelect == 0) {
-            if(userSelect == 1) {
+        while(true) {
+            std::cout << "You have $" << z.get_money() << std::endl; 
+            std::cout << "Press 1 to begin Day " << z.get_daysOpen() + 1 << std::endl;
+            std::cout << "Press 2 to enter the shop" << std::endl;
+            std::cout << "Press 3 to view your animals and enclosures" << std::endl;
+            std::cin >> userSelect;
 
-            } else if(userSelect == 2) {
-                std::cout << "From the shop, you can buy animal food, new animals, and new facilities such as enclosures." << std::endl;
-                std::cout << "Press 1 for the food menu" << std::endl;
-                std::cout << "Press 2 for the animals menu" << std::endl;
-                std::cout << "Press 3 for the facilities menu" << std::endl;
-                std::cin >> userSelect;
-                if(userSelect)
-            } else if (userSelect == 3) {
-
-            } else {
-                userSelect = 0;
-                std::cout << "That is not a valid option" << std::endl;
+            switch (userSelect) {
+                case 1:
+                    break;
+                case 2:
+                    while(true) {
+                        std::cout << "From the shop, you can buy animal food, new animals, and new facilities such as enclosures." << std::endl;
+                        std::cout << "Press 1 for the food menu" << std::endl;
+                        std::cout << "Press 2 for the animals menu" << std::endl;
+                        std::cout << "Press 3 for the facilities menu" << std::endl;
+                        std::cin >> userSelect;
+                        switch (userSelect) {
+                            case 1:
+                                std::cout << "food" << std::endl;
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            default:
+                                std::cout << "That is not a valid option" << std::endl;
+                                continue;
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                case 3:
+                    break;
+                default:
+                    std::cout << "That is not a valid option" << std::endl;
+                    continue;
+                break;
             }
-        }
+
+
+
+        };
+
+
     }
     std::cout << "You are out of money! Game over" << std::endl;
 
