@@ -36,20 +36,31 @@ int main() {
     std::cout << "You've been gifted a panda for your zoo. Please name this panda: ";
     std::cin >> startingPandaName;
     z.addAnimal(z.get_enclosures()[0], new Panda(150, "Panda", "Omnivore", startingPandaName, "Bamboo"));
-//    while(z.get_money() > 0) {
-//        int userSelect = 0;
-//        std::cout << "Press 1 to begin day " << z.get_daysOpen() + 1 << std::endl;
-//        std::cout << "Press 2 to enter the shop" << std::endl;
-//        std::cout << "Press 3 to view your animals and enclosures" << std::endl;
-//        std::cin >> userSelect;
-//        if(userSelect == 1) {
-//
-//        } else if(userSelect == 2) {
-//
-//        } else if (userSelect == 3) {
-//
-//        }
-//}
-//    std::cout << "You are out of money! Game over" << std::endl;
+    while(z.get_money() > 0) {
+        int userSelect = 0;
+        std::cout << "You have $" << z.get_money() << std::endl; 
+        std::cout << "Press 1 to begin Day " << z.get_daysOpen() + 1 << std::endl;
+        std::cout << "Press 2 to enter the shop" << std::endl;
+        std::cout << "Press 3 to view your animals and enclosures" << std::endl;
+        std::cin >> userSelect;
+        while(userSelect == 0) {
+            if(userSelect == 1) {
+
+            } else if(userSelect == 2) {
+                std::cout << "From the shop, you can buy animal food, new animals, and new facilities such as enclosures." << std::endl;
+                std::cout << "Press 1 for the food menu" << std::endl;
+                std::cout << "Press 2 for the animals menu" << std::endl;
+                std::cout << "Press 3 for the facilities menu" << std::endl;
+                std::cin >> userSelect;
+                if(userSelect)
+            } else if (userSelect == 3) {
+
+            } else {
+                userSelect = 0;
+                std::cout << "That is not a valid option" << std::endl;
+            }
+        }
+    }
+    std::cout << "You are out of money! Game over" << std::endl;
 
 }
