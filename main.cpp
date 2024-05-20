@@ -36,4 +36,20 @@ int main() {
     std::cout << "You've been gifted a panda for your zoo. Please name this panda: ";
     std::cin >> startingPandaName;
     z.addAnimal(z.get_enclosures()[0], new Panda(150, "Panda", "Omnivore", startingPandaName, "Bamboo"));
+//    while(z.get_money() > 0) {
+//        int userSelect = 0;
+//        std::cout << "Press 1 to begin day " << z.get_daysOpen() + 1 << std::endl;
+//        std::cout << "Press 2 to enter the shop" << std::endl;
+//        std::cout << "Press 3 to view your animals and enclosures" << std::endl;
+//        std::cin >> userSelect;
+//        if(userSelect == 1) {
+//
+//        } else if(userSelect == 2) {
+//
+//        } else if (userSelect == 3) {
+//
+//        }
+//}
+//    std::cout << "You are out of money! Game over" << std::endl;
+
 }

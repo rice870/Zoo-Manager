@@ -34,7 +34,7 @@ class Zoo {
         int enclosureCount;
         int animalCount; // Probably just counts all of the animals inside all of the enclosures
         //int cameraPosX;
-        vector<Animal*> allAnimals; // Animals will have 
+        //vector<Animal*> allAnimals; // Animals will have 
         //bool openStatus;
 
 
@@ -49,6 +49,7 @@ class Zoo {
         int countFacilities();
         int countEnclosures();
         vector<Enclosure*> enclosures; // The zoo will have a vector of all if its enclosures, each enclosure can be seperately called, enclosures will each contain a animal pointer vector.
+        vector<Animal*> allAnimals; // Think this should be public, as its being called directly in the addAnimal() function. Correct if wrong
 
 
 
