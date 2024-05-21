@@ -274,55 +274,61 @@ int main() {
                                                 continue;
                                             }
                                             break;
-                                        /*case 2:
-                                            cout << "How many kg of insects would you like to buy? " << endl;
-                                            cin >> amount_to_buy;
-                                            if (amount_to_buy * COST_INSECT <= z.get_money()){
-                                                z.pay(amount_to_buy * COST_INSECT);
-                                                z.addInsects(amount_to_buy);
+                                        case 2:
+                                            if (COST_KIWI_ENCLOSURE <= z.get_money()){
+                                                std::string enclosureName;
+                                                std::cout << "Please name this enclosure: ";
+                                                std::cin >> enclosureName;
+                                                z.pay(COST_KIWI_ENCLOSURE);
+                                                z.addEnclosure(new Enclosure(enclosureName, z.generateUniqueID(), 5, "Kiwi"));
                                             } else {
                                                 cout << "You can't afford that much.";
                                                 continue;
                                             }
                                             break;
                                         case 3:
-                                            cout << "How many kg of fruit would you like to buy? " << endl;
-                                            cin >> amount_to_buy;
-                                            if (amount_to_buy * COST_FRUIT <= z.get_money()){
-                                                z.pay(amount_to_buy * COST_FRUIT);
-                                                z.addFruit(amount_to_buy);
+                                            if (COST_ELEPHANT_ENCLOSURE <= z.get_money()){
+                                                std::string enclosureName;
+                                                std::cout << "Please name this enclosure: ";
+                                                std::cin >> enclosureName;
+                                                z.pay(COST_ELEPHANT_ENCLOSURE);
+                                                z.addEnclosure(new Enclosure(enclosureName, z.generateUniqueID(), 5, "Elephant"));
                                             } else {
                                                 cout << "You can't afford that much.";
                                                 continue;
                                             }
+                                            break;
                                         case 4:
-                                            cout << "How many kg of leaves would you like to buy? " << endl;
-                                            cin >> amount_to_buy;
-                                            if (amount_to_buy * COST_LEAVES <= z.get_money()){
-                                                z.pay(amount_to_buy * COST_LEAVES);
-                                                z.addLeaves(amount_to_buy);
+                                            if (COST_TORTOISE_ENCLOSURE <= z.get_money()){
+                                                std::string enclosureName;
+                                                std::cout << "Please name this enclosure: ";
+                                                std::cin >> enclosureName;
+                                                z.pay(COST_TORTOISE_ENCLOSURE);
+                                                z.addEnclosure(new Enclosure(enclosureName, z.generateUniqueID(), 5, "Kiwi"));
                                             } else {
                                                 cout << "You can't afford that much.";
                                                 continue;
                                             }
+                                            break;
                                         case 5:
-                                            cout << "How many kg of australian grass would you like to buy? " << endl;
-                                            cin >> amount_to_buy;
-                                            if (amount_to_buy * COST_AUSTRALIAN_GRASS <= z.get_money()){
-                                                z.pay(amount_to_buy * COST_AUSTRALIAN_GRASS);
-                                                z.addAustralianGrass(amount_to_buy);
+                                            if (COST_KANGAROO_ENCLOSURE <= z.get_money()){
+                                                std::string enclosureName;
+                                                std::cout << "Please name this enclosure: ";
+                                                std::cin >> enclosureName;
+                                                z.pay(COST_KANGAROO_ENCLOSURE);
+                                                z.addEnclosure(new Enclosure(enclosureName, z.generateUniqueID(), 5, "Kiwi"));
                                             } else {
                                                 cout << "You can't afford that much.";
                                                 continue;
                                             }
-                                        break;
+                                            break;
                                         case 6:
                                             break;
 
                                         default:
                                             cout << "That's not an option." << endl;
                                             continue;
-                                    }*/
+                                    }
                                     break; 
                                     }
                                 break;
