@@ -147,6 +147,7 @@ int main() {
                                             std::cout << "Zookeeper, " << zookeepers[i]->getName() << ", tried to feed " << animalToFeed->getName() << " but there was insufficient " << animalToFeed->getFavouriteTreat() << " to do so!" << std::endl;
                                         }
                                     }
+                                    animalsToFeed.erase(find(animalsToFeed.begin(),animalsToFeed.end(),animalToFeed));
                                 }
                             }
                             z.pay(COST_ZOOKEEPER * zookeepers.size());
@@ -162,7 +163,6 @@ int main() {
                         std::cout << "Press 2 for the animals menu" << std::endl;
                         std::cout << "Press 3 for the facilities menu" << std::endl;
                         std::cout << "Press 4 for the workers menu" << std::endl;
-                        std::cout << "Press 5 to see all information about your zoo" << std::endl;
                         std::cin >> userSelect;
                         switch (userSelect) {
                             case 1:
@@ -396,6 +396,8 @@ int main() {
                                             std::cout << "You can't afford one." << std::endl;
                                             continue;
                                         }
+                                        break;
+                                    case 6:
                                         break;
                                     
                                     default:
