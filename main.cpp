@@ -402,12 +402,14 @@ int main() {
                                             continue;
                                         }
                                         break;
+
                                     case 6:
                                         break;
                                     
                                     default:
                                         break;
                                     }
+                                    break;
                                 }
                                 break;
                             case 3:
@@ -504,7 +506,6 @@ int main() {
                                     for (int i=0;i<amount_to_buy;i++){
                                         zookeepers.push_back(new ZooKeeper(names[rand() % 1000], COST_ZOOKEEPER));
                                     }
-                                    z.pay(COST_ZOOKEEPER);
                                     break;
                                 
                                 default:
