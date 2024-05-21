@@ -38,6 +38,8 @@ Zoo::Zoo(string name, string location, int money, int daysOpen, int animalCapaci
     bamboo = 0;
     insects = 0;
     fruit = 0;
+    leaves = 0;
+    australianGrass = 0;
 }
 
 
@@ -70,6 +72,14 @@ void Zoo::addInsects(int amount){
 
 void Zoo::addFruit(int amount){
     this->fruit += amount;
+}
+
+void Zoo::addLeaves(int amount){
+    this->leaves += amount;
+}
+
+void Zoo::addAustralianGrass(int amount){
+    this->australianGrass += amount;
 }
 
 int Zoo::generateUniqueID() {
