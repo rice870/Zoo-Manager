@@ -3,6 +3,8 @@
 
 #include "Animal.h"
 #include <string>
+#include <cstdlib>
+#include <ctime>
 
 class Kangaroo : public Animal {
 public:

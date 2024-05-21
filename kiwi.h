@@ -4,6 +4,10 @@
 
 #include "Animal.h"
 #include <string>
+#include <vector>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 class Kiwi : public Animal {
 public:
