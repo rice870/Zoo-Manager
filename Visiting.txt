@@ -1,0 +1,80 @@
+This shows visiting working as intended. Initially, rand wasn't seeded right, but now it is.
+
+Z starting cash: 500
+Welcome Wang Wang!
+Welcome Funi!
+Welcome Bao Bao!
+Welcome Mei Mei!
+Welcome Tofu!
+Welcome Mochi!
+Welcome Bamboo!
+Welcome Ling Ling!
+Welcome Yuki!
+Welcome Oreo!
+A visitor is visiting an exhibit.
+Bao Bao the Panda is eating bamboo!
+Bamboo the Panda is eating bamboo!
+Now Cash = 650
+A visitor is visiting an exhibit.
+Mochi the Panda is eating bamboo!
+Now Cash = 800
+A visitor is visiting an exhibit.
+Wang Wang the Panda is eating bamboo!
+Funi the Panda is eating bamboo!
+Bamboo the Panda is eating bamboo!
+Now Cash = 950
+A visitor is visiting an exhibit.
+Wang Wang the Panda is eating bamboo!
+Funi the Panda is eating bamboo!
+Bao Bao the Panda is eating bamboo!
+Oreo the Panda is eating bamboo!
+Now Cash = 1100
+PS C:\Users\Jared\OneDrive\Documents\Isaac\_uni\oop\project\Zoo-Manager> ./zoop
+Z starting cash: 500
+Welcome Wang Wang!
+Welcome Funi!
+Welcome Bao Bao!
+Welcome Mei Mei!
+Welcome Tofu!
+Welcome Mochi!
+Welcome Bamboo!
+Welcome Ling Ling!
+Welcome Yuki!
+Welcome Oreo!
+A visitor is visiting an exhibit.
+Tofu the Panda is eating bamboo!
+Mochi the Panda is eating bamboo!
+Now Cash = 650
+A visitor is visiting an exhibit.
+Now Cash = 800
+A visitor is visiting an exhibit.
+Mei Mei the Panda is eating bamboo!
+Now Cash = 950
+A visitor is visiting an exhibit.
+Bao Bao the Panda is eating bamboo!
+Yuki the Panda is eating bamboo!
+Now Cash = 1100
+PS C:\Users\Jared\OneDrive\Documents\Isaac\_uni\oop\project\Zoo-Manager> ./zoop
+Z starting cash: 500
+Welcome Wang Wang!
+Welcome Funi!
+Welcome Bao Bao!
+Welcome Mei Mei!
+Welcome Tofu!
+Welcome Mochi!
+Welcome Bamboo!
+Welcome Ling Ling!
+Welcome Yuki!
+Welcome Oreo!
+A visitor is visiting an exhibit.
+Funi the Panda is eating bamboo!
+Bao Bao the Panda is eating bamboo!
+Yuki the Panda is eating bamboo!
+Now Cash = 650
+A visitor is visiting an exhibit.
+Bao Bao the Panda is eating bamboo!
+Now Cash = 800
+A visitor is visiting an exhibit.
+Mei Mei the Panda is eating bamboo!
+A visitor is visiting an exhibit.
+Now Cash = 1100
