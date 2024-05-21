@@ -21,6 +21,7 @@ class Visitor : public Person {
         Visitor();
 
         // Methods specific to Visitor
+        void populateZoo();
         void chooseVisitSpots(Zoo* z);
         void enterZoo();
         void visitFacility(Zoo * z);
