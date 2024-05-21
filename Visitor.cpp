@@ -26,19 +26,13 @@ Visitor::Visitor() : Person(), age(0), preferences(""), visitDate("") {}
 }
  
 // Method for the visitor to enter the zoo
-void Visitor::enterZoo() {
+Visitor* Visitor::enterZoo() {
     cout << "A visitor has entered the zoo." << endl;
+    Visitor* v = new Visitor();
+    return v;
 }
 
-void Zoo::populateZoo() { // Written by Cooper Melville | This function is pretty similar to what enterZoo will do, fills up the visitors vector in Zoo
-    srand(time(NULL));
-    for(int i = 0; i > rand() % 100 + 50) { // Number of people that can come to the zoo is between 50 and 100
-        int ageGenerator = rand() % 90;
-        visitors[i] = new Visitor();
 
-    }
-    std::cout << countVisitors() << " people visited your zoo!" << std::endl;
-}
 
 
 // Method for the visitor to visit an exhibit

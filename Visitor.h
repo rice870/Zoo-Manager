@@ -20,10 +20,9 @@ class Visitor : public Person {
         // Default constructor
         Visitor();
 
-        // Methods specific to Visitor
-        void populateZoo();
+        // Methods specific to Visitors
         void chooseVisitSpots(Zoo* z);
-        void enterZoo();
+        Visitor* enterZoo();
         void visitFacility(Zoo * z);
         //void makePurchase(Zoo* z, int payment);
 

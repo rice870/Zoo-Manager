@@ -25,6 +25,8 @@ int main() {
     std::string userLocation = "";
     std::string startingEnclosureName = "";
     std::string startingPandaName = "";
+    vector<Visitor*> visitors; // In the main file, rather than Zoo.
+    Visitor v; // This is here so that enterZoo() can be called
     std::cout << "Please enter the name of your zoo: ";
     std::cin >> userName;
     std::cout << "Please enter your zoo's location: ";
@@ -50,8 +52,11 @@ int main() {
 
             switch (userSelect) {
                 case 1:
-                    // starts game, populates zoo with people
-                    break;
+                    for(int i = 0; i < 100; i++) {
+                        visitors.push_back(v.enterZoo());
+                    }
+                    continue;
+
 
                 case 2:
                     while(true) {
