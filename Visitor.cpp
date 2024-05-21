@@ -8,6 +8,7 @@ using namespace std;
 // Constructor to initialize a Visitor object
 Visitor::Visitor(double posX, double posY, double speed, int age, std::string preferences, std::string visitDate)
     : Person(posX, posY, speed, "Visitor"), age(age), preferences(preferences), visitDate(visitDate) {}
+
 Visitor::Visitor(string name, int age) : Person(name){this->age = age; this->name = name;}
 
 // Default constructor
@@ -24,11 +25,6 @@ Visitor::Visitor() : Visitor(0,0,0,0,"","") {}
     if (facility_count == 0){
         this->placesToVisit.push_back(z->getFacilities()[0]);
     }
-}
- 
-// Method for the visitor to enter the zoo
-void Visitor::enterZoo() {
-    cout << "A visitor has entered the zoo." << endl;
 }
 
 /* void Zoo::populateZoo() { // Written by Cooper Melville | This function is pretty similar to what enterZoo will do, fills up the visitors vector in Zoo
