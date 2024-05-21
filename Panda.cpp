@@ -35,7 +35,7 @@ Panda::Panda() : Animal() {
 // Override the getFed method
 void Panda::getFed(std::string food, int amountKg) {
     Animal::getFed(food, amountKg);  // Call the base class implementation
-    if (food == "Bamboo") {
+    if (food == "bamboo") {
         happiness += amountKg;  // Pandas are especially happy when they eat bamboo
         cout << name << " the Panda is especially happy with bamboo!" << endl;
     }
@@ -55,9 +55,9 @@ void Panda::rest(int hours) {
 }
 
 // Additional methods specific to Panda
-//void Panda::eatBamboo() {
-//    cout << name << " the Panda is eating bamboo!" << endl;
-//    hunger = max(hunger - 10, 0);  // Reduce hunger significantly
-//    happiness += 10;  // Increase happiness significantly
-//}
+void Panda::eatBamboo() {
+    cout << name << " the Panda is eating bamboo!" << endl;
+    hunger = max(hunger - 10, 0);  // Reduce hunger significantly
+    happiness += 10;  // Increase happiness significantly
+}
 

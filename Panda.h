@@ -34,11 +34,11 @@ public:
     Panda();
 
     // Override the getFed method
-    void getFed(std::string food, int amountKg) override;
-    void getVisited() override;
+    void getFed(std::string food, int amountKg);
+    void getVisited();
 
     // Override the rest method
-    void rest(int hours) override;
+    void rest(int hours);
 
     // Additional methods specific to Panda
     //void eatBamboo();
