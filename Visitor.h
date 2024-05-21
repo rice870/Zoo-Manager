@@ -16,6 +16,7 @@ class Visitor : public Person {
     public:
         // Constructor to initialize a Visitor object
         Visitor(double posX, double posY, double speed, int age, std::string preferences, std::string visitDate);
+        Visitor(string name, int age);
         
         // Default constructor
         Visitor();

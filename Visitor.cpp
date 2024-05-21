@@ -8,9 +8,10 @@ using namespace std;
 // Constructor to initialize a Visitor object
 Visitor::Visitor(double posX, double posY, double speed, int age, std::string preferences, std::string visitDate)
     : Person(posX, posY, speed, "Visitor"), age(age), preferences(preferences), visitDate(visitDate) {}
+Visitor::Visitor(string name, int age) : Person(name){this->age = age; this->name = name;}
 
 // Default constructor
-Visitor::Visitor() : Person(), age(0), preferences(""), visitDate("") {}
+Visitor::Visitor() : Visitor(0,0,0,0,"","") {}
 
  void Visitor::chooseVisitSpots(Zoo* z){
     int facility_count = 0;
@@ -30,7 +31,7 @@ void Visitor::enterZoo() {
     cout << "A visitor has entered the zoo." << endl;
 }
 
-void Zoo::populateZoo() { // Written by Cooper Melville | This function is pretty similar to what enterZoo will do, fills up the visitors vector in Zoo
+/* void Zoo::populateZoo() { // Written by Cooper Melville | This function is pretty similar to what enterZoo will do, fills up the visitors vector in Zoo
     srand(time(NULL));
     for(int i = 0; i > rand() % 100 + 50) { // Number of people that can come to the zoo is between 50 and 100
         int ageGenerator = rand() % 90;
@@ -38,7 +39,7 @@ void Zoo::populateZoo() { // Written by Cooper Melville | This function is prett
 
     }
     std::cout << countVisitors() << " people visited your zoo!" << std::endl;
-}
+} */
 
 
 // Method for the visitor to visit an exhibit

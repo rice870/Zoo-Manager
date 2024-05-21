@@ -9,10 +9,12 @@ class Person {
         double posY;    // Y position of the person in the zoo
         double speed;   // Movement speed of the person
         std::string role; // Role of the person (e.g., staff, visitor)
+        string name;
 
     public:
         // Constructor to initialize a Person object with specific values
         Person(double posX, double posY, double speed, std::string role);
+        Person(string name):name(name){}
 
         // Default constructor
         Person();

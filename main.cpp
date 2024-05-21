@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <string>
 #include "Zoo.h"
@@ -19,8 +20,19 @@ using namespace std;
 
 
 int main() {
+    ifstream inputFile("Names.txt");
+    vector<string> names;
+    string line;
+    while (getline(inputFile, line)) {
+        names.push_back(line);
+    }
+
     int day=0;
-    int COST_PANDA = 200;
+    const int COST_PANDA = 200;
+    const int COST_PANDA_ECLOSURE = 2500;
+    const int COST_BAMBOO = 5;
+    const int COST_PANDA = 200;
+    const int COST_PANDA_ECLOSURE = 2500;
     std::string userName = "";
     std::string userLocation = "";
     std::string startingEnclosureName = "";
@@ -42,6 +54,7 @@ int main() {
     while(z.get_money() > 0) {
         int userSelect = 0;
         while(true) {
+            srand(time(nullptr));
             std::cout << "You have $" << z.get_money() << std::endl; 
             std::cout << "Press 1 to begin Day " << z.get_daysOpen() + 1 << std::endl;
             std::cout << "Press 2 to enter the shop" << std::endl;
@@ -49,9 +62,16 @@ int main() {
             std::cin >> userSelect;
 
             switch (userSelect) {
-                case 1:
-                    // starts game, populates zoo with people
+                {
+                    case 1:
+                    int visitorAmount = rand() % 5 + z.getFacilities().size();
+                    Visitor* visitors[visitorAmount];
+                    for (int i=0;i<visitorAmount;i++){
+                        visitors[i] = new Visitor();
+
+                    }
                     break;
+                }
 
                 case 2:
                     while(true) {
