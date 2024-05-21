@@ -56,7 +56,7 @@ int main() {
     std::cout << "You have a starting budget of " << z.get_money() << ", spend it wisely to grow your zoo." << std::endl;
     std::cout << "You have been gifted a panda enclosure to begin. Enter the name of your starting enclosure: ";
     std::cin >> startingEnclosureName;
-    z.addEnclosure(new Enclosure(startingEnclosureName, 4, 5, "Panda"));
+    z.addEnclosure(new Enclosure(startingEnclosureName, z.generateUniqueID(), 5, "Panda"));
     std::cout << "Your new enclosure " << z.enclosures[0]->get_name() << " was just created with an ID of " << z.enclosures[0]->get_ID() << std::endl;
     std::cout << "You've been gifted a panda for your zoo. Please name this panda: ";
     std::cin >> startingPandaName;
@@ -86,6 +86,8 @@ int main() {
                             visitors[j]->visitFacility(&z);
                         }
                     }
+                    std::cout << visitorAmount << " people visited your zoo!" << std::endl;
+                    day++; 
                     break;
                 }
 
@@ -167,6 +169,7 @@ int main() {
 
                                         default:
                                             cout << "That's not an option." << endl;
+                                            continue;
                                     }
                                     break;
                                     
@@ -175,7 +178,82 @@ int main() {
                             case 2:
                                 break;
                             case 3:
+                                while(true) {
+                                    std::cout << "Enclosures Menu:" << std::endl;
+                                    std::cout << "Buy enclosures for your animals (each enclosure can house 5 animals of the same type)" << std::endl;
+                                    std::cout << "Press 1 to buy a panda enclosure | Price: $" << COST_PANDA_ENCLOSURE << std::endl;
+                                    std::cout << "Press 2 to buy a kiwi enclosure | Price: $" << COST_KIWI_ENCLOSURE << std::endl;
+                                    std::cout << "Press 3 to buy an elephant enclosure | Price: $" << COST_ELEPHANT_ENCLOSURE << std::endl;
+                                    std::cout << "Press 4 to buy a tortoise enclosure | Price: $" << COST_TORTOISE_ENCLOSURE  << std::endl;
+                                    std::cout << "Press 5 to buy a kangaroo enclosure | Price: $" << COST_KANGAROO_ENCLOSURE  << std::endl;
+                                    std::cout << "Press 6 to exit the shop" << std::endl;
+                                    std::cin >> userSelect;
+                                    switch(userSelect) {
+                                        case 1:
+                                            if (COST_PANDA_ENCLOSURE <= z.get_money()){
+                                                std::string enclosureName;
+                                                std::cout << "Please name this enclosure: ";
+                                                std::cin >> enclosureName;
+                                                z.pay(COST_PANDA_ENCLOSURE);
+                                                z.addEnclosure(new Enclosure(enclosureName, z.generateUniqueID(), 5, "Panda"));
+                                            } else {
+                                                cout << "You can't afford that much.";
+                                                continue;
+                                            }
+                                            break;
+                                        /*case 2:
+                                            cout << "How many kg of insects would you like to buy? " << endl;
+                                            cin >> amount_to_buy;
+                                            if (amount_to_buy * COST_INSECT <= z.get_money()){
+                                                z.pay(amount_to_buy * COST_INSECT);
+                                                z.addInsects(amount_to_buy);
+                                            } else {
+                                                cout << "You can't afford that much.";
+                                                continue;
+                                            }
+                                            break;
+                                        case 3:
+                                            cout << "How many kg of fruit would you like to buy? " << endl;
+                                            cin >> amount_to_buy;
+                                            if (amount_to_buy * COST_FRUIT <= z.get_money()){
+                                                z.pay(amount_to_buy * COST_FRUIT);
+                                                z.addFruit(amount_to_buy);
+                                            } else {
+                                                cout << "You can't afford that much.";
+                                                continue;
+                                            }
+                                        case 4:
+                                            cout << "How many kg of leaves would you like to buy? " << endl;
+                                            cin >> amount_to_buy;
+                                            if (amount_to_buy * COST_LEAVES <= z.get_money()){
+                                                z.pay(amount_to_buy * COST_LEAVES);
+                                                z.addLeaves(amount_to_buy);
+                                            } else {
+                                                cout << "You can't afford that much.";
+                                                continue;
+                                            }
+                                        case 5:
+                                            cout << "How many kg of australian grass would you like to buy? " << endl;
+                                            cin >> amount_to_buy;
+                                            if (amount_to_buy * COST_AUSTRALIAN_GRASS <= z.get_money()){
+                                                z.pay(amount_to_buy * COST_AUSTRALIAN_GRASS);
+                                                z.addAustralianGrass(amount_to_buy);
+                                            } else {
+                                                cout << "You can't afford that much.";
+                                                continue;
+                                            }
+                                        break;
+                                        case 6:
+                                            break;
+
+                                        default:
+                                            cout << "That's not an option." << endl;
+                                            continue;
+                                    }*/
+                                    break; 
+                                    }
                                 break;
+                                }
                             default:
                                 std::cout << "That is not a valid option" << std::endl;
                                 continue;

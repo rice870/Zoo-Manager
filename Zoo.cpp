@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "Zoo.h"
 #include "Animal.h"
 #include "Panda.h"
@@ -86,6 +88,7 @@ int Zoo::generateUniqueID() {
     int id;
 
     while (find(usedAnimalIDs.begin(), usedAnimalIDs.end(), id) != usedAnimalIDs.end()){
+        srand(time(NULL));
         id = std::rand(); // Generate a random ID
     }
 
