@@ -1,5 +1,22 @@
+#include "Zoo.h"
+#include "Animal.h"
+//#include "Drinkshop.h"
+//#include "Elephant.h"
+#include "Enclosure.h"
+#include "Facility.h"
+//#include "Kangaroo.h"
+//#include "Kiwi.h"
+//#include "Panda.h"
+//#include "Person.h"
+//#include "Staff.h"
 #include "Tortoise.h"
+#include "Visitor.h"
+//#include "Zookeeper.h"
+#include <string>
+#include <vector>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -23,6 +40,9 @@ void Tortoise::getFed(std::string food, int amountKg) {
     }
 }
 
+void Tortoise::getVisited() {
+
+}
 // Override the rest method
 void Tortoise::rest(int hours) {
     Animal::rest(hours);  // Call the base class implementation

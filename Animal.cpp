@@ -1,6 +1,11 @@
 
 #include "Animal.h"
 #include <algorithm> // For std::max
+#include <string>
+#include <vector>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 // Constructor to initialize an Animal object with specific values
 Animal::Animal(int weight, string species, string diet, string name, string favourite_treat) {

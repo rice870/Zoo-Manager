@@ -1,5 +1,7 @@
 #include "Kangaroo.h"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -21,6 +23,14 @@ void Kangaroo::getFed(std::string food, int amountKg) {
         happiness += amountKg;  // Kangaroos are especially happy when they eat their favourite treat
         cout << name << " the Kangaroo is especially happy with " << favourite_treat << "!" << endl;
     }
+}
+
+void Kangaroo::getVisited(){
+    srand(time(NULL));
+    if (rand() % 4 == 0){
+        this->jump();
+    }
+    this->fatigue++;
 }
 
 // Override the rest method

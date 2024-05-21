@@ -13,10 +13,10 @@ public:
     Tortoise();
 
     // Override the getFed method
-    void getFed(std::string food, int amountKg) override;
+    void getFed(std::string food, int amountKg);
 
     // Override the rest method
-    void rest(int hours) override;
+    void rest(int hours);
 
     // Additional methods specific to Tortoise
     void hide();

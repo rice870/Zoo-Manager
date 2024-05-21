@@ -41,7 +41,7 @@ public:
     void rest(int hours);
 
     // Additional methods specific to Panda
-    //void eatBamboo();
+    void eatBamboo();
 };
 
 #endif // PANDA_H

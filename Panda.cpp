@@ -43,9 +43,9 @@ void Panda::getFed(std::string food, int amountKg) {
 
 void Panda::getVisited(){
     if (rand() % 4 == 0){
-        eatBamboo();
+        this->eatBamboo();
     }
-    fatigue++;
+    this->fatigue++;
 }
 
 // Override the rest method

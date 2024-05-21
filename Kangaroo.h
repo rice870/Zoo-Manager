@@ -3,6 +3,8 @@
 
 #include "Animal.h"
 #include <string>
+#include <cstdlib>
+#include <ctime>
 
 class Kangaroo : public Animal {
 public:
@@ -14,7 +16,7 @@ public:
 
     // Override the getFed method
     void getFed(std::string food, int amountKg) override;
-
+    void getVisited();
     // Override the rest method
     void rest(int hours) override;
 
