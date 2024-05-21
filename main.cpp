@@ -52,7 +52,7 @@ int main() {
     while(z.get_money() > 0) {
         int userSelect = 0;
         while(true) {
-            srand(time(nullptr));
+            srand(time(NULL));
             std::cout << "You have $" << z.get_money() << std::endl; 
             std::cout << "Press 1 to begin Day " << z.get_daysOpen() + 1 << std::endl;
             std::cout << "Press 2 to enter the shop" << std::endl;
@@ -62,6 +62,7 @@ int main() {
             switch (userSelect) {
                 {
                     case 1:
+                    srand(time(NULL));
                     int visitorAmount = rand() % 5 + z.getFacilities().size();
                     Visitor* visitors[visitorAmount];
                     for (int i=0;i<visitorAmount;i++){
