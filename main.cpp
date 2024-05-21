@@ -272,6 +272,7 @@ int main() {
                                                         std::cout << "What would you like to name your panda?" << std::endl;
                                                         std::cin >> animal_name;
                                                         z.enclosures[i]->addAnimal(new Panda(70 + rand() % 40, animal_name));
+                                                        z.pay(COST_PANDA);
                                                     } else {
                                                         std::cout << "That enclosure's full!" << std::endl;
                                                     }
@@ -300,6 +301,7 @@ int main() {
                                                         std::cout << "What would you like to name your kiwi?" << std::endl;
                                                         std::cin >> animal_name;
                                                         z.enclosures[i]->addAnimal(new Kiwi(2 + rand() % 2, animal_name));
+                                                        z.pay(COST_KIWI);
                                                     } else {
                                                         std::cout << "That enclosure's full!" << std::endl;
                                                     }
@@ -328,6 +330,7 @@ int main() {
                                                         std::cout << "What would you like to name your elephant?" << std::endl;
                                                         std::cin >> animal_name;
                                                         z.enclosures[i]->addAnimal(new Elephant(3000 + rand() % 2000, animal_name));
+                                                        z.pay(COST_ELEPHANT);
                                                     } else {
                                                         std::cout << "That enclosure's full!" << std::endl;
                                                     }
@@ -356,6 +359,7 @@ int main() {
                                                         std::cout << "What would you like to name your tortoise?" << std::endl;
                                                         std::cin >> animal_name;
                                                         z.enclosures[i]->addAnimal(new Tortoise(150 + rand() % 75, animal_name));
+                                                        z.pay(COST_TORTOISE);
                                                     } else {
                                                         std::cout << "That enclosure's full!" << std::endl;
                                                     }
@@ -384,6 +388,7 @@ int main() {
                                                         std::cout << "What would you like to name your kangaroo?" << std::endl;
                                                         std::cin >> animal_name;
                                                         z.enclosures[i]->addAnimal(new Kangaroo(70 + rand() % 40, animal_name));
+                                                        z.pay(COST_KANGAROO);
                                                     } else {
                                                         std::cout << "That enclosure's full!" << std::endl;
                                                     }
@@ -499,6 +504,7 @@ int main() {
                                     for (int i=0;i<amount_to_buy;i++){
                                         zookeepers.push_back(new ZooKeeper(names[rand() % 1000], COST_ZOOKEEPER));
                                     }
+                                    z.pay(COST_ZOOKEEPER);
                                     break;
                                 
                                 default:
