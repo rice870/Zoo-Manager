@@ -7,13 +7,14 @@
 class Staff : public Person {
 protected:
     std::string role;        // Role of the staff member (e.g., zookeeper, veterinarian)
+    std::string name;
     double salary;           // Salary of the staff member
     int performanceRating;   // Performance rating of the staff member
 
 public:
     // Constructor to initialize a Staff object with specific values
-    Staff(double posX, double posY, double speed, std::string role, double salary, int performanceRating, string name);
-    Staff(string name, double salary);
+    //Staff(double posX, double posY, double speed, std::string role, double salary, int performanceRating, std::string name);
+    Staff(std::string name, double salary);
 
     // Default constructor
     Staff();
