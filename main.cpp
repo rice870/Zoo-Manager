@@ -68,6 +68,7 @@ int main() {
                     Visitor* visitors[visitorAmount];
                     for (int i=0;i<visitorAmount;i++){
                         visitors[i] = new Visitor(names[rand() % 1000], rand() % 75);
+                        z.receiveMoney(visitors[i]->calculateTicketPrice());
                     }
                     for (int i=0;i<z.getFacilities().size();i++){
                         for (int j=0;j<visitorAmount;j++){
