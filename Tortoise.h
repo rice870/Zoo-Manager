@@ -18,7 +18,7 @@ public:
     void getVisited() override;
 
     // Override the rest method
-    void rest(int hours);
+    void rest(int hours) override;
 
     // Additional methods specific to Tortoise
     void hide();

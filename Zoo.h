@@ -55,6 +55,8 @@ class Zoo {
         void addFruit(int amount);
         void addLeaves(int amount);
         void addAustralianGrass(int amount);
+        void addLeaves(int amount);
+        void addAustralianGrass(int amount);
         int generateUniqueID();
         void addAnimal(Enclosure* enclosure, Animal* animal);
         void releaseAnimal(int _IDchoose); 
