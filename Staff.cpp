@@ -61,3 +61,6 @@ void Staff::setPerformanceRating(int performanceRating) {
     this->performanceRating = performanceRating;  // Set the performance rating of the staff member
 }
 
+void Staff::get_status(){
+    std::cout << "Name: " << this->name << " | Salary: " << this->salary << std::endl;
+}

@@ -39,3 +39,7 @@ void Facility::set_name(string _name) {
 void Facility::set_ID(int _ID) {
     ID = _ID;
 }
+
+void Facility::get_status(){
+    std::cout << "Name: " << this->name << " | ID: " << this->ID;
+}

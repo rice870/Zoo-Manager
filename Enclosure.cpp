@@ -45,6 +45,7 @@ Enclosure::Enclosure(string name, int ID, int enclosureCapacity, string speciesT
     this->enclosureCapacity = enclosureCapacity;
     this->speciesType = speciesType;
     enclosedCount = 0;
+    this->type = "Enclosure";
 }
 
 int Enclosure::getSize(){
@@ -104,4 +105,11 @@ int Enclosure::get_enclosure_capacity(){
 
 string Enclosure::get_species_type(){
     return speciesType;
+}
+
+void Enclosure::get_status(){
+    std::cout << "Type: " << this->type << " | Name: " << this->name << " | ID: " << this->ID << " | Enclosure capacity: " << this->enclosureCapacity << " | Enclosed animal amount: " << this->animals.size() << " | Enclosed animals:" << endl;
+    for (int i=0;i<animals.size();i++){
+        animals[i]->get_status();
+    }
 }

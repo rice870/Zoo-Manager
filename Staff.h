@@ -35,6 +35,7 @@ public:
     void setSalary(double salary);       // Set the salary of the staff member
     int getPerformanceRating() const;    // Get the performance rating of the staff member
     void setPerformanceRating(int performanceRating); // Set the performance rating of the staff member
+    virtual void get_status();
 };
 
 #endif // STAFF_H

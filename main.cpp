@@ -5,15 +5,15 @@
 #include "Zoo.h"
 #include "Animal.h"
 //#include "Drinkshop.h"
-//#include "Elephant.h"
+#include "Elephant.h"
 #include "Enclosure.h"
 #include "Facility.h"
-//#include "Kangaroo.h"
-//#include "Kiwi.h"
+#include "Kangaroo.h"
+#include "Kiwi.h"
 #include "Panda.h"
 //#include "Person.h"
 #include "Staff.h"
-//#include "Tortoise.h"
+#include "Tortoise.h"
 #include "Visitor.h"
 #include "Zookeeper.h"
 
@@ -75,7 +75,7 @@ int main() {
             std::cout << "You have $" << z.get_money() << std::endl; 
             std::cout << "Press 1 to begin Day " << z.get_daysOpen() + 1 << std::endl;
             std::cout << "Press 2 to enter the shop" << std::endl;
-            std::cout << "Press 3 to feed and view your animals" << std::endl;
+            std::cout << "Press 3 to view zoo" << std::endl;
             std::cin >> userSelect;
 
             switch (userSelect) {
@@ -162,6 +162,7 @@ int main() {
                         std::cout << "Press 2 for the animals menu" << std::endl;
                         std::cout << "Press 3 for the facilities menu" << std::endl;
                         std::cout << "Press 4 for the workers menu" << std::endl;
+                        std::cout << "Press 5 to see all information about your zoo" << std::endl;
                         std::cin >> userSelect;
                         switch (userSelect) {
                             case 1:
@@ -511,6 +512,10 @@ int main() {
                     }
                     break;
                 case 3:
+                    z.get_status();
+                    for (int i=0;i<zookeepers.size();i++){
+                        zookeepers[i]->get_status();
+                    }
                     break;
                 default:
                     std::cout << "That is not a valid option" << std::endl;

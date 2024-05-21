@@ -44,6 +44,12 @@ Zoo::Zoo(string name, string location, int money, int daysOpen, int animalCapaci
     australian_grass = 0;
 }
 
+void Zoo::get_status(){
+    std::cout << "Zoo name: " << this->name << " | Facility count: " << this->facilities.size() << " | Facilities: " << std::endl;
+    for (int i = 0; i<facilities.size();i++){
+        facilities[i]->get_status();
+    }
+}
 
 void Zoo::addEnclosure(Enclosure* enclosure) {
     enclosures.push_back(enclosure);

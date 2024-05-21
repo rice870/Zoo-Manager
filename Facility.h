@@ -21,6 +21,7 @@ class Facility{
     protected:
         string name;
         int ID;
+        string type;
 
     public:
         Facility();
@@ -32,6 +33,7 @@ class Facility{
         void set_ID(int _ID);
 
         virtual int get_visited(){return 0;}   
+        virtual void get_status();
 
 };
 

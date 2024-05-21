@@ -46,6 +46,8 @@ class Zoo {
     public:
         Zoo();
         Zoo(string name, string location, int money, int daysOpen, int animalCapacity);
+        void get_status();
+        
         void addEnclosure(Enclosure* enclosure);
         void addFacility(Facility* facility);
         void receiveMoney(int payment);

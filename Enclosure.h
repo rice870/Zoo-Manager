@@ -48,6 +48,7 @@ class Enclosure : public Facility {
         vector<Animal*> get_animals();
         int get_enclosure_capacity();
         string get_species_type();
+        void get_status() override;
 
 
 

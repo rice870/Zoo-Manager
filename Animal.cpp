@@ -46,6 +46,10 @@ void Animal::rest(int hours) {
     fatigue = max(fatigue, 0);  // Ensure fatigue does not go below 0
 }
 
+void Animal::get_status(){
+    std::cout << "Name: " << this->name << " | ID: " << this->ID << " | Fatigue: " << this->fatigue << " | Hunger: " << this->hunger << " | Weight: " << this->weight << std::endl;
+}
+
 // Setter methods
 void Animal::setFatigue(int fatigue) {
     this->fatigue = fatigue;  // Set the fatigue level
