@@ -55,9 +55,9 @@ void Panda::rest(int hours) {
 }
 
 // Additional methods specific to Panda
-void Panda::eatBamboo() {
-    cout << name << " the Panda is eating bamboo!" << endl;
-    hunger = max(hunger - 10, 0);  // Reduce hunger significantly
-    happiness += 10;  // Increase happiness significantly
-}
+//void Panda::eatBamboo() {
+//    cout << name << " the Panda is eating bamboo!" << endl;
+//    hunger = max(hunger - 10, 0);  // Reduce hunger significantly
+//    happiness += 10;  // Increase happiness significantly
+//}
 
