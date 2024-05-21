@@ -9,7 +9,7 @@
 // Constructor to initialize an Elephant object
 Elephant::Elephant(int weight, std::string species, std::string diet, std::string name, std::string favourite_treat)
     : Animal(weight, species, diet, name, favourite_treat) {
-        visitWorth = 10;
+        visitWorth = 50;
     // Additional initialization specific to Elephant
 }
 

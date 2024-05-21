@@ -6,11 +6,14 @@ using namespace std;
 // Constructor to initialize a Tortoise object
 Tortoise::Tortoise(int weight, std::string species, std::string diet, std::string name, std::string favourite_treat)
     : Animal(weight, species, diet, name, favourite_treat) {
+        this->visitWorth = 20;
     // Additional initialization specific to Tortoise
 }
 
+Tortoise::Tortoise(int weight, string name) : Animal(weight, "Tortoise", "Leaf", name, "Leaf"){}
+
 // Default constructor
-Tortoise::Tortoise() : Animal() {
+Tortoise::Tortoise() : Tortoise(0, "") {
     // Default initialization specific to Tortoise
 }
 

@@ -37,6 +37,8 @@ class Zoo {
         //bool openStatus;
         vector<Facility*> facilities;
         int bamboo;
+        int fruit;
+        int insects;
 
 
     public:
@@ -45,6 +47,10 @@ class Zoo {
         void addEnclosure(Enclosure* enclosure);
         void addFacility(Facility* facility);
         void receiveMoney(int payment);
+        void pay(int payment);
+        void addBamboo(int amount);
+        void addInsects(int amount);
+        void addFruit(int amount);
         int generateUniqueID();
         void addAnimal(Enclosure* enclosure, Animal* animal);
         void releaseAnimal(int _IDchoose); 

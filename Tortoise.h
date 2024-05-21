@@ -8,6 +8,7 @@ class Tortoise : public Animal {
 public:
     // Constructor to initialize a Tortoise object
     Tortoise(int weight, std::string species, std::string diet, std::string name, std::string favourite_treat);
+    Tortoise(int weight, string name);
     
     // Default constructor
     Tortoise();

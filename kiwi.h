@@ -8,7 +8,7 @@
 class Kiwi : public Animal {
 public:
     // Constructor to initialize a Kiwi object
-    Kiwi(int weight, std::string species, std::string diet, std::string name, std::string favourite_treat);
+    Kiwi(int weight, std::string name);
     
     // Default constructor
     Kiwi();

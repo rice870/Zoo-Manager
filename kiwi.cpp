@@ -6,8 +6,8 @@
 using namespace std;
 
 // Constructor to initialize a Kiwi object
-Kiwi::Kiwi(int weight, std::string species, std::string diet, std::string name, std::string favourite_treat)
-    : Animal(weight, species, diet, name, favourite_treat) {
+Kiwi::Kiwi(int weight, std::string name)
+    : Animal(weight, "Kiwi", "Insects", name, "Insects") {
         visitWorth=6;
     // Additional initialization specific to Kiwi
 }

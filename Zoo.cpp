@@ -36,6 +36,8 @@ Zoo::Zoo(string name, string location, int money, int daysOpen, int animalCapaci
     enclosureCount = 0;
     animalCount = 0;
     bamboo = 0;
+    insects = 0;
+    fruit = 0;
 }
 
 
@@ -52,6 +54,22 @@ void Zoo::addFacility(Facility* facility){
 
 void Zoo::receiveMoney(int payment){
     this->money += payment;
+}
+
+void Zoo::pay(int payment){
+    this->money -= payment;
+}
+
+void Zoo::addBamboo(int amount){
+    this->bamboo += amount;
+}
+
+void Zoo::addInsects(int amount){
+    this->insects += amount;
+}
+
+void Zoo::addFruit(int amount){
+    this->fruit += amount;
 }
 
 int Zoo::generateUniqueID() {

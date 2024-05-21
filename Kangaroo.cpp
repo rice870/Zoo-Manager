@@ -9,8 +9,13 @@ Kangaroo::Kangaroo(int weight, std::string species, std::string diet, std::strin
     // Additional initialization specific to Kangaroo
 }
 
+Kangaroo::Kangaroo(int weight, std::string name)
+    : Animal(weight, "Kangaroo", "Australian Grass", name, "Australian Grass") {
+    visitWorth = 30;
+}
+
 // Default constructor
-Kangaroo::Kangaroo() : Animal() {
+Kangaroo::Kangaroo() : Kangaroo(5, "") {
     // Default initialization specific to Kangaroo
 }
 
