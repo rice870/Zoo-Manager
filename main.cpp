@@ -28,11 +28,9 @@ int main() {
     }
 
     int day=0;
-    const int COST_PANDA = 200;
-    const int COST_PANDA_ECLOSURE = 2500;
-    const int COST_BAMBOO = 5;
-    const int COST_PANDA = 200;
-    const int COST_PANDA_ECLOSURE = 2500;
+    int const COST_PANDA = 200;
+    int const COST_PANDA_ECLOSURE = 2500;
+    int const COST_BAMBOO = 5;
     std::string userName = "";
     std::string userLocation = "";
     std::string startingEnclosureName = "";
