@@ -1,3 +1,3 @@
--change cin to read in lines (allows spaces)
+-change cin to read in lines (allows spaces) DONE
 -add cashiers to limit entrance (can allow 5 people each)
 -add some more facilities (shops etc.)

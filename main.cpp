@@ -52,18 +52,19 @@ int main() {
     std::string startingEnclosureName = "";
     std::string startingPandaName = "";
     std::cout << "Please enter the name of your zoo: ";
-    std::cin >> userName;
+    std::getline(std::cin, userName);
     std::cout << "Please enter your zoo's location: ";
-    std::cin >> userLocation;
+    std::getline(std::cin, userLocation);
     Zoo z(userName, userLocation, 300, 0, 10);
     std::cout << "Your zoo " << z.get_name() << " has been created in " << z.get_location() << "." << std::endl;
     std::cout << "You have a starting budget of " << z.get_money() << ", spend it wisely to grow your zoo." << std::endl;
     std::cout << "You have been gifted a panda enclosure to begin. Enter the name of your starting enclosure: ";
-    std::cin >> startingEnclosureName;
+    std::getline(std::cin, startingEnclosureName);
     z.addEnclosure(new Enclosure(startingEnclosureName, z.generateUniqueID(), 5, "Panda"));
     std::cout << "Your new enclosure " << z.enclosures[0]->get_name() << " was just created with an ID of " << z.enclosures[0]->get_ID() << std::endl;
     std::cout << "You've been gifted a panda for your zoo. Please name this panda: ";
-    std::cin >> startingPandaName;
+    // read in the name of the panda
+    std::getline(std::cin, startingPandaName);
     z.addAnimal(z.get_enclosures()[0], new Panda(150, "Panda", "Omnivore", startingPandaName, "Bamboo"));
 
     vector<ZooKeeper*> zookeepers;
@@ -262,7 +263,7 @@ int main() {
                                         if (z.get_money() >= COST_PANDA){
                                             std::string enclosure_choice;
                                             std::cout << "Which enclosure do you want to put the panda in?" << std::endl;
-                                            cin >> enclosure_choice;
+                                            std::getline(std::cin, enclosure_choice);
                                             bool real_choice = false;
                                             for (int i=0;i<z.enclosures.size();i++){
                                                 if (enclosure_choice==z.enclosures[i]->get_name() && z.enclosures[i]->get_species_type() == "Panda"){
@@ -270,7 +271,7 @@ int main() {
                                                     if (z.enclosures[i]->get_animals().size() < z.enclosures[i]->get_enclosure_capacity()){
                                                         std::string animal_name;
                                                         std::cout << "What would you like to name your panda?" << std::endl;
-                                                        std::cin >> animal_name;
+                                                        std::getline(std::cin, animal_name);
                                                         z.enclosures[i]->addAnimal(new Panda(70 + rand() % 40, animal_name));
                                                         z.pay(COST_PANDA);
                                                     } else {
@@ -291,7 +292,7 @@ int main() {
                                         if (z.get_money() >= COST_KIWI){
                                             std::string enclosure_choice;
                                             std::cout << "Which enclosure do you want to put the kiwi in?" << std::endl;
-                                            cin >> enclosure_choice;
+                                            std::getline(std::cin, enclosure_choice);
                                             bool real_choice = false;
                                             for (int i=0;i<z.enclosures.size();i++){
                                                 if (enclosure_choice==z.enclosures[i]->get_name() && z.enclosures[i]->get_species_type() == "Kiwi"){
@@ -299,7 +300,7 @@ int main() {
                                                     if (z.enclosures[i]->get_animals().size() < z.enclosures[i]->get_enclosure_capacity()){
                                                         std::string animal_name;
                                                         std::cout << "What would you like to name your kiwi?" << std::endl;
-                                                        std::cin >> animal_name;
+                                                        std::getline(std::cin, animal_name);
                                                         z.enclosures[i]->addAnimal(new Kiwi(2 + rand() % 2, animal_name));
                                                         z.pay(COST_KIWI);
                                                     } else {
@@ -320,7 +321,7 @@ int main() {
                                         if (z.get_money() >= COST_ELEPHANT){
                                             std::string enclosure_choice;
                                             std::cout << "Which enclosure do you want to put the elephant in?" << std::endl;
-                                            cin >> enclosure_choice;
+                                            std::getline(std::cin, enclosure_choice);
                                             bool real_choice = false;
                                             for (int i=0;i<z.enclosures.size();i++){
                                                 if (enclosure_choice==z.enclosures[i]->get_name() && z.enclosures[i]->get_species_type() == "Elephant"){
@@ -328,7 +329,7 @@ int main() {
                                                     if (z.enclosures[i]->get_animals().size() < z.enclosures[i]->get_enclosure_capacity()){
                                                         std::string animal_name;
                                                         std::cout << "What would you like to name your elephant?" << std::endl;
-                                                        std::cin >> animal_name;
+                                                        std::getline(std::cin, animal_name);
                                                         z.enclosures[i]->addAnimal(new Elephant(3000 + rand() % 2000, animal_name));
                                                         z.pay(COST_ELEPHANT);
                                                     } else {
@@ -349,7 +350,7 @@ int main() {
                                         if (z.get_money() >= COST_TORTOISE){
                                             std::string enclosure_choice;
                                             std::cout << "Which enclosure do you want to put the tortoise in?" << std::endl;
-                                            cin >> enclosure_choice;
+                                            std::getline(std::cin, enclosure_choice);
                                             bool real_choice = false;
                                             for (int i=0;i<z.enclosures.size();i++){
                                                 if (enclosure_choice==z.enclosures[i]->get_name() && z.enclosures[i]->get_species_type() == "Tortoise"){
@@ -357,7 +358,7 @@ int main() {
                                                     if (z.enclosures[i]->get_animals().size() < z.enclosures[i]->get_enclosure_capacity()){
                                                         std::string animal_name;
                                                         std::cout << "What would you like to name your tortoise?" << std::endl;
-                                                        std::cin >> animal_name;
+                                                        std::getline(std::cin, animal_name);
                                                         z.enclosures[i]->addAnimal(new Tortoise(150 + rand() % 75, animal_name));
                                                         z.pay(COST_TORTOISE);
                                                     } else {
@@ -378,7 +379,7 @@ int main() {
                                         if (z.get_money() >= COST_KANGAROO){
                                             std::string enclosure_choice;
                                             std::cout << "Which enclosure do you want to put the kangaroo in?" << std::endl;
-                                            cin >> enclosure_choice;
+                                            std::getline(std::cin, enclosure_choice);
                                             bool real_choice = false;
                                             for (int i=0;i<z.enclosures.size();i++){
                                                 if (enclosure_choice==z.enclosures[i]->get_name() && z.enclosures[i]->get_species_type() == "Kangaroo"){
@@ -386,7 +387,7 @@ int main() {
                                                     if (z.enclosures[i]->get_animals().size() < z.enclosures[i]->get_enclosure_capacity()){
                                                         std::string animal_name;
                                                         std::cout << "What would you like to name your kangaroo?" << std::endl;
-                                                        std::cin >> animal_name;
+                                                        std::getline(std::cin, animal_name);
                                                         z.enclosures[i]->addAnimal(new Kangaroo(70 + rand() % 40, animal_name));
                                                         z.pay(COST_KANGAROO);
                                                     } else {
