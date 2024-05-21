@@ -32,7 +32,7 @@ class Person {
         // Getter method for speed (optional, if needed)
         double getSpeed() const;
 
-        string getName() const{return this->name;}
+        std::string getName() const{return this->name;}
 
         // Setter and Getter methods for role (optional, if needed)
         void setRole(std::string role);

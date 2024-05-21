@@ -178,7 +178,6 @@ int main() {
                                     switch(userSelect) {
                                         int amount_to_buy;
                                         case 1:
-                                            int amount_to_buy;
                                             std::cout << "How many kg of bamboo would you like to buy? " << std::endl;
                                             std::cin >> amount_to_buy;
                                             if (amount_to_buy * COST_BAMBOO <= z.get_money()){
@@ -190,7 +189,6 @@ int main() {
                                             }
                                             break;
                                         case 2:
-                                            int amount_to_buy;
                                             std::cout << "How many kg of insects would you like to buy? " << std::endl;
                                             std::cin >> amount_to_buy;
                                             if (amount_to_buy * COST_INSECT <= z.get_money()){
@@ -202,7 +200,6 @@ int main() {
                                             }
                                             break;
                                         case 3:
-                                            int amount_to_buy;
                                             std::cout << "How many kg of fruit would you like to buy? " << std::endl;
                                             std::cin >> amount_to_buy;
                                             if (amount_to_buy * COST_FRUIT <= z.get_money()){
@@ -214,7 +211,6 @@ int main() {
                                             }
                                             break;
                                         case 4:
-                                            int amount_to_buy;
                                             std::cout << "How many kg of leaves would you like to buy? " << std::endl;
                                             std::cin >> amount_to_buy;
                                             if (amount_to_buy * COST_LEAVES <= z.get_money()){
@@ -226,7 +222,6 @@ int main() {
                                             }
                                             break;
                                         case 5:
-                                            int amount_to_buy;
                                             std::cout << "How many kg of Australian Grass would you like to buy? " << std::endl;
                                             std::cin >> amount_to_buy;
                                             if (amount_to_buy * COST_AUSTRALIAN_GRASS <= z.get_money()){
