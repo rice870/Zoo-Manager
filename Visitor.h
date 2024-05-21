@@ -21,9 +21,9 @@ class Visitor : public Person {
         Visitor();
 
         // Methods specific to Visitor
-        //void chooseVisitSpots(Zoo* z);
+        void chooseVisitSpots(Zoo* z);
         void enterZoo();
-       // void visitFacility(Zoo* z);
+        void visitFacility(Zoo * z);
         //void makePurchase(Zoo* z, int payment);
 
         // Method to calculate the ticket price based on age

@@ -28,7 +28,6 @@ void Elephant::getFed(std::string food, int amountKg) {
 }
 
 void Elephant::getVisited(){
-    srand(time(nullptr));
     if (rand() % 3 == 0){
         this->trumpet();
     }

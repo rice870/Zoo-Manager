@@ -27,7 +27,6 @@ void Kiwi::getFed(std::string food, int amountKg) {
 }
 
 void Kiwi::getVisited(){
-    srand(time(nullptr));
     if (rand() % 6 == 0){
         this->dig();
     }

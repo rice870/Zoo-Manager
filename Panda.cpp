@@ -3,17 +3,17 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include "Zoo.h"
+//#include "Zoo.h"
 #include "Animal.h"
 #include "Panda.h"
-#include "Kangaroo.h"
+/* #include "Kangaroo.h"
 #include "Elephant.h"
 #include "Tortoise.h"
 #include "Kiwi.h"
 #include "Enclosure.h"
 #include "Facility.h"
 #include "Person.h"
-#include "Visitor.h"
+#include "Visitor.h" */
 
 using namespace std;
 
@@ -42,7 +42,6 @@ void Panda::getFed(std::string food, int amountKg) {
 }
 
 void Panda::getVisited(){
-    srand(time(nullptr));
     if (rand() % 4 == 0){
         eatBamboo();
     }

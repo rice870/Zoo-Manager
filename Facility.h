@@ -5,7 +5,7 @@
 #include <vector>
 #include <iostream>
 
-#include "Zoo.h"
+/* #include "Zoo.h"
 #include "Animal.h"
 #include "Panda.h"
 #include "Kangaroo.h"
@@ -13,7 +13,7 @@
 #include "Tortoise.h"
 #include "Kiwi.h"
 #include "Enclosure.h"
-#include "Person.h"
+#include "Person.h" */
 
 using namespace std;
 

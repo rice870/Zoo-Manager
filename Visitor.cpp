@@ -1,4 +1,5 @@
 #include "Visitor.h"
+
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -11,29 +12,32 @@ Visitor::Visitor(double posX, double posY, double speed, int age, std::string pr
 // Default constructor
 Visitor::Visitor() : Person(), age(0), preferences(""), visitDate("") {}
 
-/* void Visitor::chooseVisitSpots(Zoo* z){
-    int facility_count;
+ void Visitor::chooseVisitSpots(Zoo* z){
+    int facility_count = 0;
     for (int i=0;i<z->getFacilities().size();i++){
         if(rand() % 4 == 0){
             facility_count++;
             this->placesToVisit.push_back(z->getFacilities()[i]);
         }
     }
-} */
-
+    if (facility_count == 0){
+        this->placesToVisit.push_back(z->getFacilities()[0]);
+    }
+}
+ 
 // Method for the visitor to enter the zoo
 void Visitor::enterZoo() {
     cout << "A visitor has entered the zoo." << endl;
 }
 
 // Method for the visitor to visit an exhibit
-/* void Visitor::visitFacility(Zoo *z) {
+void Visitor::visitFacility(Zoo * z) {
     if (placesToVisit.size() != 0){
         cout << "A visitor is visiting an exhibit." << endl;
         z->receiveMoney(placesToVisit[0]->get_visited());
         placesToVisit.erase(placesToVisit.begin());
     }
-} */
+}
 
 // Method for the visitor to make a purchase
 /* void Visitor::makePurchase(Zoo *z, int payment) {

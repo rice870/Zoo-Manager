@@ -1,16 +1,16 @@
 #ifndef ENCLOSURE_H
 #define ENCLOSURE_H
 
-#include "Zoo.h"
+//#include "Zoo.h"
 #include "Animal.h"
-//#include "Panda.h"
+#include "Facility.h"
+/* #include "Panda.h"
 #include "Kangaroo.h"
 #include "Elephant.h"
 #include "Tortoise.h"
 #include "Kiwi.h"
-#include "Facility.h"
 #include "Person.h"
-#include "Visitor.h"
+#include "Visitor.h" */
 
 #include <iostream>
 #include <string>

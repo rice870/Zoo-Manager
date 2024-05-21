@@ -14,7 +14,6 @@
 #include "Enclosure.h"
 #include "Facility.h"
 #include "Person.h"
-#include "Visitor.h"
 
 using namespace std;
 
