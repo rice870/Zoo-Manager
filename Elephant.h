@@ -14,6 +14,7 @@ class Elephant : public Animal {
 public:
     // Constructor to initialize an Elephant object
     Elephant(int weight, std::string species, std::string diet, std::string name, std::string favourite_treat);
+    Elephant(int weight, string name);
     
     // Default constructor
     Elephant();

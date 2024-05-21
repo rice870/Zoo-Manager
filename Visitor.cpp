@@ -6,13 +6,13 @@
 using namespace std;
 
 // Constructor to initialize a Visitor object
-Visitor::Visitor(double posX, double posY, double speed, int age, std::string preferences, std::string visitDate)
-    : Person(posX, posY, speed, "Visitor"), age(age), preferences(preferences), visitDate(visitDate) {}
+//Visitor::Visitor(double posX, double posY, double speed, int age, std::string preferences, std::string visitDate)
+//    : Person(posX, posY, speed, "Visitor"), age(age), preferences(preferences), visitDate(visitDate) {}
 
-Visitor::Visitor(string name, int age) : Person(name){this->age = age; this->name = name;}
+Visitor::Visitor(string name, int age) : Person(name){this->age = age;}
 
 // Default constructor
-Visitor::Visitor() : Visitor(0,0,0,0,"","") {}
+Visitor::Visitor() : Visitor("",0) {}
 
  void Visitor::chooseVisitSpots(Zoo* z){
     int facility_count = 0;

@@ -13,6 +13,8 @@ Elephant::Elephant(int weight, std::string species, std::string diet, std::strin
     // Additional initialization specific to Elephant
 }
 
+Elephant::Elephant(int weight, string name) : Elephant(weight, "Elephant", "Fruit", name, "Fruit"){}
+
 // Default constructor
 Elephant::Elephant() : Animal() {
     // Default initialization specific to Elephant

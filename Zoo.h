@@ -39,6 +39,8 @@ class Zoo {
         int bamboo;
         int fruit;
         int insects;
+        int leaves;
+        int australian_grass;
 
 
     public:
@@ -51,6 +53,8 @@ class Zoo {
         void addBamboo(int amount);
         void addInsects(int amount);
         void addFruit(int amount);
+        void addLeaves(int amount);
+        void addAustralianGrass(int amount);
         int generateUniqueID();
         void addAnimal(Enclosure* enclosure, Animal* animal);
         void releaseAnimal(int _IDchoose); 
@@ -71,6 +75,10 @@ class Zoo {
         int get_enclosureCount();
         int get_animalCount();
         int get_bamboo();
+        int get_insects();
+        int get_fruit();
+        int get_leaves();
+        int get_Australian_grass();
 
 
         void set_name(string _name);

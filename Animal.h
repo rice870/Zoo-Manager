@@ -42,6 +42,7 @@ public:
     virtual void getFed(string food, int amountKg);
     virtual void getVisited(){}
     virtual void rest(int hours);
+    void increaseHunger(){this->hunger += 1;}
 
     // Setter methods
     void setFatigue(int fatigue);

@@ -4,13 +4,15 @@
 using namespace std;
 
 // Constructor to initialize a Staff object with specific values
-Staff::Staff(double posX, double posY, double speed, std::string role, double salary, int performanceRating)
-    : Person(posX, posY, speed, role), role(role), salary(salary), performanceRating(performanceRating) {
+/* Staff::Staff(double posX, double posY, double speed, std::string role, double salary, int performanceRating, string name)
+    : Person(posX, posY, speed, role), role(role), salary(salary), performanceRating(performanceRating),  {
     // Additional initialization specific to Staff can be added here
-}
+} */
+
+Staff::Staff(string name, double salary) : Person(name){this->salary=salary;}
 
 // Default constructor to initialize a Staff object with default values
-Staff::Staff() : Person(), role(""), salary(0.0), performanceRating(0) {
+Staff::Staff() : Staff("",0) {
     // Default initialization specific to Staff
 }
 
