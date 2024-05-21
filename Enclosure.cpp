@@ -93,3 +93,15 @@ int Enclosure::get_visited(){
     }
     return expenditure;
 }
+
+vector<Animal*> Enclosure::get_animals(){
+    return this->animals;
+}
+
+int Enclosure::get_enclosure_capacity(){
+    return this->enclosureCapacity;
+}
+
+string Enclosure::get_species_type(){
+    return speciesType;
+}

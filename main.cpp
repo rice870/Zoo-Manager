@@ -23,7 +23,7 @@ using namespace std;
 int main() {
     ifstream inputFile("Names.txt");
     vector<string> names;
-    string line;
+    std::string line;
     while (getline(inputFile, line)) {
         names.push_back(line);
     }
@@ -249,6 +249,163 @@ int main() {
                                 }
                                 break;
                             case 2:
+                                while (true){
+                                    srand(time(nullptr));
+
+                                    std::cout << "Animals Menu:" << std::endl;
+                                    std::cout << "Press 1 to buy a panda | Price: $" << COST_PANDA << std::endl;
+                                    std::cout << "Press 2 to buy a kiwi | Price: $" << COST_KIWI << std::endl;
+                                    std::cout << "Press 3 to buy an elephant | Price: $" << COST_ELEPHANT << std::endl;
+                                    std::cout << "Press 4 to buy a tortoise | Price: $" << COST_TORTOISE  << std::endl;
+                                    std::cout << "Press 5 to buy a kangaroo | Price: $" << COST_KANGAROO  << std::endl;
+                                    std::cout << "Press 6 to exit the shop" << std::endl;
+                                    std::cin >> userSelect;
+                                    switch (userSelect)
+                                    {
+                                    case 1:
+                                        if (z.get_money() >= COST_PANDA){
+                                            std::string enclosure_choice;
+                                            std::cout << "Which enclosure do you want to put the panda in?" << std::endl;
+                                            cin >> enclosure_choice;
+                                            bool real_choice = false;
+                                            for (int i=0;i<z.enclosures.size();i++){
+                                                if (enclosure_choice==z.enclosures[i]->get_name() && z.enclosures[i]->get_species_type() == "Panda"){
+                                                    real_choice = true;
+                                                    if (z.enclosures[i]->get_animals().size() < z.enclosures[i]->get_enclosure_capacity()){
+                                                        std::string animal_name;
+                                                        std::cout << "What would you like to name your panda?" << std::endl;
+                                                        std::cin >> animal_name;
+                                                        z.enclosures[i]->addAnimal(new Panda(70 + rand() % 40, animal_name));
+                                                    } else {
+                                                        std::cout << "That enclosure's full!" << std::endl;
+                                                    }
+                                                }
+                                            }
+                                            if (!real_choice){
+                                                std::cout << "You've entered an invalid enclosure. Make sure you've entered the correct name and the name you've entered is for a panda enclosure" << std::endl;
+                                            }
+                                        } else {
+                                            std::cout << "You can't afford one." << std::endl;
+                                            continue;
+                                        }
+                                        break;
+
+                                    case 2:
+                                        if (z.get_money() >= COST_KIWI){
+                                            std::string enclosure_choice;
+                                            std::cout << "Which enclosure do you want to put the kiwi in?" << std::endl;
+                                            cin >> enclosure_choice;
+                                            bool real_choice = false;
+                                            for (int i=0;i<z.enclosures.size();i++){
+                                                if (enclosure_choice==z.enclosures[i]->get_name() && z.enclosures[i]->get_species_type() == "Kiwi"){
+                                                    real_choice = true;
+                                                    if (z.enclosures[i]->get_animals().size() < z.enclosures[i]->get_enclosure_capacity()){
+                                                        std::string animal_name;
+                                                        std::cout << "What would you like to name your kiwi?" << std::endl;
+                                                        std::cin >> animal_name;
+                                                        z.enclosures[i]->addAnimal(new Kiwi(2 + rand() % 2, animal_name));
+                                                    } else {
+                                                        std::cout << "That enclosure's full!" << std::endl;
+                                                    }
+                                                }
+                                            }
+                                            if (!real_choice){
+                                                std::cout << "You've entered an invalid enclosure. Make sure you've entered the correct name and the name you've entered is for a kiwi enclosure" << std::endl;
+                                            }
+                                        } else {
+                                            std::cout << "You can't afford one." << std::endl;
+                                            continue;
+                                        }
+                                        break;
+
+                                    case 3:
+                                        if (z.get_money() >= COST_ELEPHANT){
+                                            std::string enclosure_choice;
+                                            std::cout << "Which enclosure do you want to put the elephant in?" << std::endl;
+                                            cin >> enclosure_choice;
+                                            bool real_choice = false;
+                                            for (int i=0;i<z.enclosures.size();i++){
+                                                if (enclosure_choice==z.enclosures[i]->get_name() && z.enclosures[i]->get_species_type() == "Elephant"){
+                                                    real_choice = true;
+                                                    if (z.enclosures[i]->get_animals().size() < z.enclosures[i]->get_enclosure_capacity()){
+                                                        std::string animal_name;
+                                                        std::cout << "What would you like to name your elephant?" << std::endl;
+                                                        std::cin >> animal_name;
+                                                        z.enclosures[i]->addAnimal(new Elephant(3000 + rand() % 2000, animal_name));
+                                                    } else {
+                                                        std::cout << "That enclosure's full!" << std::endl;
+                                                    }
+                                                }
+                                            }
+                                            if (!real_choice){
+                                                std::cout << "You've entered an invalid enclosure. Make sure you've entered the correct name and the name you've entered is for a elephant enclosure" << std::endl;
+                                            }
+                                        } else {
+                                            std::cout << "You can't afford one." << std::endl;
+                                            continue;
+                                        }
+                                        break;
+
+                                    case 4:
+                                        if (z.get_money() >= COST_TORTOISE){
+                                            std::string enclosure_choice;
+                                            std::cout << "Which enclosure do you want to put the tortoise in?" << std::endl;
+                                            cin >> enclosure_choice;
+                                            bool real_choice = false;
+                                            for (int i=0;i<z.enclosures.size();i++){
+                                                if (enclosure_choice==z.enclosures[i]->get_name() && z.enclosures[i]->get_species_type() == "Tortoise"){
+                                                    real_choice = true;
+                                                    if (z.enclosures[i]->get_animals().size() < z.enclosures[i]->get_enclosure_capacity()){
+                                                        std::string animal_name;
+                                                        std::cout << "What would you like to name your tortoise?" << std::endl;
+                                                        std::cin >> animal_name;
+                                                        z.enclosures[i]->addAnimal(new Tortoise(150 + rand() % 75, animal_name));
+                                                    } else {
+                                                        std::cout << "That enclosure's full!" << std::endl;
+                                                    }
+                                                }
+                                            }
+                                            if (!real_choice){
+                                                std::cout << "You've entered an invalid enclosure. Make sure you've entered the correct name and the name you've entered is for a tortoise enclosure" << std::endl;
+                                            }
+                                        } else {
+                                            std::cout << "You can't afford one." << std::endl;
+                                            continue;
+                                        }
+                                        break;
+
+                                    case 5:
+                                        if (z.get_money() >= COST_KANGAROO){
+                                            std::string enclosure_choice;
+                                            std::cout << "Which enclosure do you want to put the kangaroo in?" << std::endl;
+                                            cin >> enclosure_choice;
+                                            bool real_choice = false;
+                                            for (int i=0;i<z.enclosures.size();i++){
+                                                if (enclosure_choice==z.enclosures[i]->get_name() && z.enclosures[i]->get_species_type() == "Kangaroo"){
+                                                    real_choice = true;
+                                                    if (z.enclosures[i]->get_animals().size() < z.enclosures[i]->get_enclosure_capacity()){
+                                                        std::string animal_name;
+                                                        std::cout << "What would you like to name your kangaroo?" << std::endl;
+                                                        std::cin >> animal_name;
+                                                        z.enclosures[i]->addAnimal(new Kangaroo(70 + rand() % 40, animal_name));
+                                                    } else {
+                                                        std::cout << "That enclosure's full!" << std::endl;
+                                                    }
+                                                }
+                                            }
+                                            if (!real_choice){
+                                                std::cout << "You've entered an invalid enclosure. Make sure you've entered the correct name and the name you've entered is for a kangaroo enclosure" << std::endl;
+                                            }
+                                        } else {
+                                            std::cout << "You can't afford one." << std::endl;
+                                            continue;
+                                        }
+                                        break;
+                                    
+                                    default:
+                                        break;
+                                    }
+                                }
                                 break;
                             case 3:
                                 while(true) {
