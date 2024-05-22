@@ -14,7 +14,7 @@ TARGET = zookeeper
 
 # Source files
 
-SRCS = main.cpp Zoo.cpp Animal.cpp Panda.cpp Kangaroo.cpp Elephant.cpp Tortoise.cpp Kiwi.cpp Enclosure.cpp Facility.cpp Person.cpp Visitor.cpp 
+SRCS = main.cpp Zoo.cpp Enclosure.cpp Facility.cpp Panda.cpp Animal.cpp Visitor.cpp Person.cpp Staff.cpp Zookeeper.cpp Kangaroo.cpp Tortoise.cpp Elephant.cpp Kiwi.cpp 
 
 # Build and run tests
 
@@ -22,9 +22,8 @@ SRCS = main.cpp Zoo.cpp Animal.cpp Panda.cpp Kangaroo.cpp Elephant.cpp Tortoise.
 
 all:
 
-    $(CXX) $(CXXFLAGS) -o $(TARGET) $(SRCS)
-
-    ./$(TARGET)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRCS)
+	./$(TARGET)
 
 # Clean rule
 
@@ -32,4 +31,4 @@ all:
 
 clean:
 
-    rm -f $(TARGET)
+	rm -f $(TARGET)

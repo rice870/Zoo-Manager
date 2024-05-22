@@ -301,7 +301,7 @@ int main() {
                                         if (z.get_money() >= COST_PANDA){
                                             std::string enclosure_choice;
                                             std::cout << "Which enclosure do you want to put the panda in?" << std::endl;
-                                            std::getline(std::cin, enclosure_choice);
+                                            std::getline(std::cin >> std::ws, enclosure_choice);
                                             bool real_choice = false;
                                             for (int i=0;i<z.enclosures.size();i++){
                                                 if (enclosure_choice==z.enclosures[i]->get_name() && z.enclosures[i]->get_species_type() == "Panda"){
@@ -330,7 +330,7 @@ int main() {
                                         if (z.get_money() >= COST_KIWI){
                                             std::string enclosure_choice;
                                             std::cout << "Which enclosure do you want to put the kiwi in?" << std::endl;
-                                            std::getline(std::cin, enclosure_choice);
+                                            std::getline(std::cin >> std::ws, enclosure_choice);
                                             bool real_choice = false;
                                             for (int i=0;i<z.enclosures.size();i++){
                                                 if (enclosure_choice==z.enclosures[i]->get_name() && z.enclosures[i]->get_species_type() == "Kiwi"){
@@ -359,7 +359,7 @@ int main() {
                                         if (z.get_money() >= COST_ELEPHANT){
                                             std::string enclosure_choice;
                                             std::cout << "Which enclosure do you want to put the elephant in?" << std::endl;
-                                            std::getline(std::cin, enclosure_choice);
+                                            std::getline(std::cin >> std::ws, enclosure_choice);
                                             bool real_choice = false;
                                             for (int i=0;i<z.enclosures.size();i++){
                                                 if (enclosure_choice==z.enclosures[i]->get_name() && z.enclosures[i]->get_species_type() == "Elephant"){
@@ -388,7 +388,7 @@ int main() {
                                         if (z.get_money() >= COST_TORTOISE){
                                             std::string enclosure_choice;
                                             std::cout << "Which enclosure do you want to put the tortoise in?" << std::endl;
-                                            std::getline(std::cin, enclosure_choice);
+                                            std::getline(std::cin >> std::ws, enclosure_choice);
                                             bool real_choice = false;
                                             for (int i=0;i<z.enclosures.size();i++){
                                                 if (enclosure_choice==z.enclosures[i]->get_name() && z.enclosures[i]->get_species_type() == "Tortoise"){
@@ -417,7 +417,7 @@ int main() {
                                         if (z.get_money() >= COST_KANGAROO){
                                             std::string enclosure_choice;
                                             std::cout << "Which enclosure do you want to put the kangaroo in?" << std::endl;
-                                            std::getline(std::cin, enclosure_choice);
+                                            std::getline(std::cin >> std::ws, enclosure_choice);
                                             bool real_choice = false;
                                             for (int i=0;i<z.enclosures.size();i++){
                                                 if (enclosure_choice==z.enclosures[i]->get_name() && z.enclosures[i]->get_species_type() == "Kangaroo"){
