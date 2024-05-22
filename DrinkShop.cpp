@@ -1,22 +1,52 @@
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+#include <algorithm>
+
+
 #include "DrinkShop.h"
+#include "Facility.h"
 
-// Constructor to initialize a DrinkShop object
-DrinkShop::DrinkShop(std::string name) : Facility(name), totalSales(0.0) {}
+using namespace std;
 
-// Default constructor
-DrinkShop::DrinkShop() : Facility(), totalSales(0.0) {}
+DrinkShop::DrinkShop() {
+    name = "";
+    totalSales = 0.0;
+}
+
+DrinkShop::DrinkShop(string name) {
+    this->name = name;
+    totalSales = 0.0;
+
+}
+
 
 // Method to add a drink to the menu
-void DrinkShop::addDrink(std::string drink) {
+void DrinkShop::addDrink(string drink) {
     menu.push_back(drink);
     // Logic to animate adding a drink to the menu (if needed)
 }
 
-// Method to make a sale
+
+int DrinkShop::getVisited() {
+    cout << "Your drink shop was visited!" << endl;
+    srand(time(NULL));
+    int selectedDrink;
+    selectedDrink = rand() % menu.size();
+    totalSales += prices[selectedDrink];
+
+}
+
+
+/*Method to make a sale
 void DrinkShop::makeSale(double amount) {
     totalSales += amount;
     // Logic to animate making a sale (if needed)
-}
+}*/
 
 // Getter method for total sales
 double DrinkShop::getTotalSales() const {
@@ -24,7 +54,11 @@ double DrinkShop::getTotalSales() const {
 }
 
 // Getter method for menu
-std::vector<std::string> DrinkShop::getMenu() const {
+vector<string> DrinkShop::getMenu() const {
     return menu;
 }
 
+// Getter method for prices
+vector<string> DrinkShop::getPrices() const {
+    return prices;
+}

@@ -2,11 +2,11 @@
 #include <fstream>
 #include <vector>
 #include <string>
-#include <typeinfo>
+//#include <typeinfo>
 #include <algorithm>
 #include "Zoo.h"
 #include "Animal.h"
-//#include "Drinkshop.h"
+#include "Drinkshop.h"
 #include "Elephant.h"
 #include "Enclosure.h"
 #include "Facility.h"
@@ -52,6 +52,7 @@ int main() {
 
     const int COST_ZOOKEEPER = 50;
     const int COST_TICKET_TAKER = 35;
+    const int COST_DRINK_SHOP = 10000;
 
     std::string userName = "";
     std::string userLocation = "";
@@ -202,8 +203,10 @@ int main() {
                         std::cout << "From the shop, you can buy animal food, new animals, and new facilities such as enclosures." << std::endl;
                         std::cout << "Press 1 for the food menu" << std::endl;
                         std::cout << "Press 2 for the animals menu" << std::endl;
-                        std::cout << "Press 3 for the facilities menu" << std::endl;
+                        std::cout << "Press 3 for the enclosures menu" << std::endl;
                         std::cout << "Press 4 for the workers menu" << std::endl;
+                        std::cout << "Press 5 for the facilities menu" << std::endl;
+
                         std::cin >> userSelect;
                         switch (userSelect) {
                             case 1:
@@ -566,6 +569,29 @@ int main() {
                                 std::cout << "That is not a valid option" << std::endl;
                                 continue;
                             break;
+                            case 5:
+                                std::cout << "Facilities menu: " << std::endl;
+                                std::cout << "Press 1 to buy a Drink Shop for $" << COST_DRINK_SHOP << std::endl;
+                                std::cin >> userSelect;
+                                switch (userSelect) {
+                                    case 1:
+                                        std::string drinkshopName;
+                                        std::cout << "What would you like to name your drink shop?" << std::endl;
+                                        std::cin >> drinkshopName;
+                                        z.addFacility(new DrinkShop(drinkshopName));
+                                        std::string drinkNames;
+                                        int drinkPrices;
+                                        for(int i = 0; i < 4; i++) {
+                                            std::cout << "Name drink " << i << ": ";
+                                            std::cin >> drinkNames;
+                                            z.addDrink(drinkNames);
+                                            std::cout << "Name the price of this drink:";
+                                            std::cin >> drinkPrices;
+                                            addPrice(drinkPrices); 
+                                        }
+                                    break;
+                                }
+                                break;
                         }
                         break;
                     }
