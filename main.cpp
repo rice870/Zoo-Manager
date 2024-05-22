@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <algorithm>
 #include "Zoo.h"
 #include "Animal.h"
 //#include "Drinkshop.h"
@@ -16,11 +17,14 @@
 #include "Tortoise.h"
 #include "Visitor.h"
 #include "Zookeeper.h"
+#include "TicketTaker.h"
 
 using namespace std;
 
 
 int main() {
+    srand(time(nullptr));
+
     ifstream inputFile("Names.txt");
     vector<string> names;
     std::string line;
@@ -46,6 +50,7 @@ int main() {
     const int COST_KANGAROO_ENCLOSURE = 5000;
 
     const int COST_ZOOKEEPER = 50;
+    const int COST_TICKET_TAKER = 35;
 
     std::string userName = "";
     std::string userLocation = "";
@@ -68,6 +73,12 @@ int main() {
     z.addAnimal(z.get_enclosures()[0], new Panda(150, "Panda", "Omnivore", startingPandaName, "Bamboo"));
 
     vector<ZooKeeper*> zookeepers;
+    vector<TicketTaker*> ticketTakers;
+
+    std::cout << "You have been gifted a zookeeper and a ticket taker to start you off and a ticket taker to begin your zoo. Their name will be assigned at random. " << std::endl; 
+    std::cout << "If people aren't being admitted to your zoo, or animals aren't being fed, you likely need more of these" << std::endl;
+    zookeepers.push_back(new ZooKeeper(names[rand() % 1000], COST_ZOOKEEPER));
+    ticketTakers.push_back(new TicketTaker(names[rand() % 1000], COST_TICKET_TAKER));
 
     while(z.get_money() > 0) {
         int userSelect = 0;
@@ -90,14 +101,33 @@ int main() {
 
                         // Create visitors
                         int visitorAmount = rand() % 5 + z.getFacilities().size();
-                        Visitor* visitors[visitorAmount];
+                        vector<Visitor*> visitors;
 
-                        // Visitors enter the gate
+                        // Visitors arrive at gates
                         for (int i=0;i<visitorAmount;i++){
-                            visitors[i] = new Visitor(names[rand() % 1000], rand() % 75);
-                            cout << visitors[i]->getName() << ", " << visitors[i]->getAge() << " years old, has just entered our zoo!" << endl;
-                            z.receiveMoney(visitors[i]->calculateTicketPrice());
+                            visitors.push_back(new Visitor(names[rand() % 1000], rand() % 75));
+                            cout << visitors[i]->getName() << ", " << visitors[i]->getAge() << " years old, is at the gates of our zoo!" << endl;
                         }
+
+                        vector<Visitor*> visitorsToEnter = visitors;
+
+                        // Ticket taker takes tickets and removes visitors from the queue
+                        for (int i=0;i<ticketTakers.size();i++){
+                            for (int j=0;j<5;j++){
+                                if (visitorsToEnter.size() != 0){
+                                    z.receiveMoney(visitorsToEnter[0]->calculateTicketPrice());
+                                    cout << visitorsToEnter[0]->getName() << " was admitted." << endl;
+                                    visitorsToEnter.erase(visitorsToEnter.begin());
+                                }
+                            }
+                        }
+
+                        // Visitors is set to admitted visitors by creating a new vector and making the new vector the set difference of the visitors and visitorsToEnter
+                        vector<Visitor*> visitorsAdmitted;
+                        sort(visitors.begin(), visitors.end());
+                        sort(visitorsToEnter.begin(), visitorsToEnter.end());
+                        std::set_difference(visitors.begin(), visitors.end(), visitorsToEnter.begin(), visitorsToEnter.end(), back_inserter(visitorsAdmitted));
+                        visitors = visitorsAdmitted;
 
                         // Visitors visit facility
                         for (int i=0;i<z.getFacilities().size();i++){
@@ -151,7 +181,15 @@ int main() {
                                     animalsToFeed.erase(find(animalsToFeed.begin(),animalsToFeed.end(),animalToFeed));
                                 }
                             }
-                            z.pay(COST_ZOOKEEPER * zookeepers.size());
+                            
+                            // Pay all workers
+                            for (int i=0;i<zookeepers.size();i++){
+                                z.pay(zookeepers[i]->getSalary());
+                            }
+
+                            for (int i=0;i<ticketTakers.size();i++){
+                                z.pay(ticketTakers[i]->getSalary());
+                            }
                         }
 
                         break;
@@ -496,7 +534,9 @@ int main() {
                                     }
                                 break;
                             case 4:
+                                std::cout << "Workers menu: " << std::endl;
                                 std::cout << "Press 1 to contract a new ZooKeeper for $" << COST_ZOOKEEPER << " a day." << std::endl;
+                                std::cout << "Press 2 to contract a new Ticket Taker for $" << COST_TICKET_TAKER << " a day." << std::endl;
                                 std::cin >> userSelect;
                                 switch (userSelect)
                                 {
@@ -506,6 +546,14 @@ int main() {
                                     std::cin >> amount_to_buy;
                                     for (int i=0;i<amount_to_buy;i++){
                                         zookeepers.push_back(new ZooKeeper(names[rand() % 1000], COST_ZOOKEEPER));
+                                    }
+                                    break;
+                                case 2:
+                                    std::cout << "How many would you like to contract?" << std::endl;
+                                    int amount_to_buy;
+                                    std::cin >> amount_to_buy;
+                                    for (int i=0;i<amount_to_buy;i++){
+                                        ticketTakers.push_back(new TicketTaker(names[rand() % 1000], COST_TICKET_TAKER));
                                     }
                                     break;
                                 
