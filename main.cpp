@@ -6,7 +6,7 @@
 #include <algorithm>
 #include "Zoo.h"
 #include "Animal.h"
-#include "Drinkshop.h"
+#include "DrinkShop.h"
 #include "Elephant.h"
 #include "Enclosure.h"
 #include "Facility.h"
@@ -32,7 +32,6 @@ int main() {
     while (getline(inputFile, line)) {
         names.push_back(line);
     }
-
     int day=0;
     const int COST_PANDA = 200;
     const int COST_PANDA_ENCLOSURE = 2500;
@@ -76,6 +75,8 @@ int main() {
 
     vector<ZooKeeper*> zookeepers;
     vector<TicketTaker*> ticketTakers;
+    std::vector<std::string> menu; // List of drinks available in the shop (for drinkshop)
+    std::vector<int> prices; // List of drink prices, note that prices[i] will be related to menu[i] and will be the price for that drink.
 
     std::cout << "You have been gifted a zookeeper and a ticket taker to start you off and a ticket taker to begin your zoo. Their name will be assigned at random. " << std::endl; 
     std::cout << "If people aren't being admitted to your zoo, or animals aren't being fed, you likely need more of these" << std::endl;
@@ -579,16 +580,16 @@ int main() {
                                         std::cout << "What would you like to name your drink shop?" << std::endl;
                                         std::cin >> drinkshopName;
                                         z.addFacility(new DrinkShop(drinkshopName));
-                                        z.drinkShops.push_back(new DrinkShop(drinkshopName));
+                                        //z.drinkShops.push_back(new DrinkShop(drinkshopName));
                                         std::string drinkNames;
                                         int drinkPrices;
-                                        for(int i = 0; i < 4; i++) {
-                                            std::cout << "Name drink " << i << ": ";
-                                            std::cin >> drinkNames;
-                                            z.drinkShops[0]->addDrink(drinkNames);
+                                        for(int i = 0; i <= 4; i++) {
+                                            std::cout << "Name drink " << i+1 << ": ";
+                                            std::cin >> std::ws >> drinkNames;
+                                            menu.push_back(drinkNames);
                                             std::cout << "Name the price of this drink:";
-                                            std::cin >> drinkPrices;
-                                            z.drinkShops[0]->addPrice(drinkPrices); 
+                                            std::cin >> std::ws >> drinkPrices;
+                                            prices.push_back(drinkPrices);
                                         }
                                     break;
                                 }
@@ -611,13 +612,13 @@ int main() {
 
 
         if(z.get_money() <= 0) {
+            std::cout << "You are out of money, game over!" << std::endl;
             break;
+
         }
         };
 
 
-
     }
-    std::cout << "You are out of money! Game over" << std::endl;
 
 }

@@ -10,41 +10,43 @@
 
 #include "DrinkShop.h"
 #include "Facility.h"
+#include "Zoo.h"
 
 using namespace std;
 
 DrinkShop::DrinkShop() {
     name = "";
-    totalSales = 0.0;
+    totalSales = 0;
 }
 
 DrinkShop::DrinkShop(string name) {
     this->name = name;
-    totalSales = 0.0;
+    totalSales = 0;
 
 }
 
 
-// Method to add a drink to the menu
+/* Method to add a drink to the menu
 void DrinkShop::addDrink(string drink) {
     menu.push_back(drink);
     // Logic to animate adding a drink to the menu (if needed)
-}
+}*/
 
 
-int DrinkShop::getVisited() {
+int DrinkShop::getVisited(std::vector<int> prices) {
     cout << "Your drink shop was visited!" << endl;
     srand(time(NULL));
-    int selectedDrink;
-    selectedDrink = rand() % menu.size();
-    totalSales += prices[selectedDrink];
+    int selectedDrink = rand() % 5 + 1;
+    std::cout << selectedDrink << std::endl;
+    //std::vector<int>::iterator it;
+    //it = find(prices.begin(), prices.end(), selectedDrink);
+    int deductedAmount = prices.at(selectedDrink);
+    totalSales += deductedAmount;
     return totalSales;
 
 }
 
-void DrinkShop::addPrice(int _drinkPrice) {
-    prices.push_back(_drinkPrice);
-}
+
 /*Method to make a sale
 void DrinkShop::makeSale(double amount) {
     totalSales += amount;
@@ -52,16 +54,16 @@ void DrinkShop::makeSale(double amount) {
 }*/
 
 // Getter method for total sales
-double DrinkShop::getTotalSales() const {
+int DrinkShop::getTotalSales() const {
     return totalSales;
 }
 
-// Getter method for menu
+/* Getter method for menu
 vector<string> DrinkShop::getMenu() const {
     return menu;
 }
 
 // Getter method for prices
-vector<double> DrinkShop::getPrices() const {
+vector<int> DrinkShop::getPrices() const {
     return prices;
-}
+}*/
