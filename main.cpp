@@ -88,7 +88,7 @@ int main() {
         while(true) {
             srand(time(NULL));
             std::cout << "You have $" << z.get_money() << std::endl; 
-            std::cout << "Press 1 to begin Day " << z.get_daysOpen() + 1 << std::endl;
+            std::cout << "Press 1 to begin Day " << day + 1 << std::endl;
             std::cout << "Press 2 to enter the shop" << std::endl;
             std::cout << "Press 3 to view zoo" << std::endl;
             std::cin >> userSelect;
@@ -616,6 +616,7 @@ int main() {
             break;
 
         }
+        day++;
         };
 
 
