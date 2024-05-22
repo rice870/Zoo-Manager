@@ -576,20 +576,26 @@ int main() {
                                 std::cin >> userSelect;
                                 switch (userSelect) {
                                     case 1:
-                                        std::string drinkshopName;
-                                        std::cout << "What would you like to name your drink shop?" << std::endl;
-                                        std::cin >> drinkshopName;
-                                        z.addFacility(new DrinkShop(drinkshopName));
-                                        //z.drinkShops.push_back(new DrinkShop(drinkshopName));
-                                        std::string drinkNames;
-                                        int drinkPrices;
-                                        for(int i = 0; i <= 4; i++) {
-                                            std::cout << "Name drink " << i+1 << ": ";
-                                            std::cin >> std::ws >> drinkNames;
-                                            menu.push_back(drinkNames);
-                                            std::cout << "Name the price of this drink:";
-                                            std::cin >> std::ws >> drinkPrices;
-                                            prices.push_back(drinkPrices);
+                                        if(COST_DRINK_SHOP <= z.get_money()) {
+                                            z.pay(COST_DRINK_SHOP);
+                                            std::string drinkshopName;
+                                            std::cout << "What would you like to name your drink shop?" << std::endl;
+                                            std::cin >> drinkshopName;
+                                            z.addFacility(new DrinkShop(drinkshopName));;
+                                            std::string drinkNames;
+                                            int drinkPrices;
+                                            for(int i = 0; i <= 4; i++) {
+                                                std::cout << "Name drink " << i+1 << ": ";
+                                                std::cin >> std::ws >> drinkNames;
+                                                menu.push_back(drinkNames);
+                                                std::cout << "Name the price of this drink:";
+                                                std::cin >> std::ws >> drinkPrices;
+                                                prices.push_back(drinkPrices);
+                                            }
+                                            break;
+                                        } else {
+                                            std::cout << "You can't afford that yet!" << std::endl;
+                                            continue;
                                         }
                                     break;
                                 }
