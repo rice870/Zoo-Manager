@@ -86,7 +86,7 @@ void Enclosure::set_ID(int _ID) {
     ID = _ID;
 }
 
-int Enclosure::get_visited(){
+int Enclosure::getVisited(){
     int expenditure;
     for (int i=0;i<enclosedCount;i++){
         animals[i]->getVisited();

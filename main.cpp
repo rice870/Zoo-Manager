@@ -134,13 +134,7 @@ int main() {
                         for (int i=0;i<z.getFacilities().size();i++){
                             for (int j=0;j<visitorAmount;j++){
                                 visitors[j]->visitFacility(&z);
-                                /*for(int k = 0; k < get_enclosures().size; k++) {
-                                    if(z.getFacilities()[i]->get_ID() == z.get_enclosures()[k]->get_ID()) {
-                                        for(int l = 0; l > z.get_enclosures()[k]->get_enclosure_capacity(); l++) {
-                                            z.get_enclosures()[k]->get_animals()[l]->getFed();
-                                        }
-                                    }
-                                }*/
+                                z.getFacilities()[i]->getVisited();
                             }
                         }
 
