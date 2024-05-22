@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <typeinfo>
 #include <algorithm>
 #include "Zoo.h"
 #include "Animal.h"
@@ -133,6 +134,7 @@ int main() {
                         for (int i=0;i<z.getFacilities().size();i++){
                             for (int j=0;j<visitorAmount;j++){
                                 visitors[j]->visitFacility(&z);
+                                z.getFacilities()[i]->getVisited();
                             }
                         }
 
@@ -540,9 +542,9 @@ int main() {
                                 std::cin >> userSelect;
                                 switch (userSelect)
                                 {
+                                    int amount_to_buy;
                                 case 1:
                                     std::cout << "How many would you like to contract?" << std::endl;
-                                    int amount_to_buy;
                                     std::cin >> amount_to_buy;
                                     for (int i=0;i<amount_to_buy;i++){
                                         zookeepers.push_back(new ZooKeeper(names[rand() % 1000], COST_ZOOKEEPER));
@@ -550,7 +552,6 @@ int main() {
                                     break;
                                 case 2:
                                     std::cout << "How many would you like to contract?" << std::endl;
-                                    int amount_to_buy;
                                     std::cin >> amount_to_buy;
                                     for (int i=0;i<amount_to_buy;i++){
                                         ticketTakers.push_back(new TicketTaker(names[rand() % 1000], COST_TICKET_TAKER));

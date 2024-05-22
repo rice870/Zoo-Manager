@@ -42,7 +42,7 @@ Visitor::Visitor() : Visitor("",0) {}
 void Visitor::visitFacility(Zoo * z) {
     if (placesToVisit.size() != 0){
         cout << "A visitor is visiting an exhibit." << endl;
-        z->receiveMoney(placesToVisit[0]->get_visited());
+        z->receiveMoney(placesToVisit[0]->getVisited());
         placesToVisit.erase(placesToVisit.begin());
     }
 }

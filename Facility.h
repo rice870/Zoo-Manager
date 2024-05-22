@@ -32,7 +32,7 @@ class Facility{
         void set_name(string _name);
         void set_ID(int _ID);
 
-        virtual int get_visited(){return 0;}   
+        virtual int getVisited(){return 0;}   
         virtual void get_status();
 
 };

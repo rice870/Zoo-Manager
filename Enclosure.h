@@ -44,7 +44,7 @@ class Enclosure : public Facility {
         int get_ID();
         void set_name(string _name);
         void set_ID(int _ID);
-        int get_visited() override;
+        int getVisited() override;
         vector<Animal*> get_animals();
         int get_enclosure_capacity();
         string get_species_type();
