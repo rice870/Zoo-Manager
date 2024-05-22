@@ -49,8 +49,8 @@ int main() {
     const int COST_KANGAROO = 500;
     const int COST_KANGAROO_ENCLOSURE = 5000;
 
-    const int COST_ZOOKEEPER = 50;
-    const int COST_TICKET_TAKER = 35;
+    const int COST_ZOOKEEPER = 15;
+    const int COST_TICKET_TAKER = 13;
     const int COST_DRINK_SHOP = 10000;
 
     std::string userName = "";
