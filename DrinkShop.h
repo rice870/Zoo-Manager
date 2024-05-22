@@ -32,7 +32,7 @@ public:
     std::vector<double> getPrices() const;
     // Method to add a drink to the menu
     void addDrink(std::string _drink);
-    void addPrice(std::string _drink);
+    void addPrice(int _drinkPrice);
 };
 
 #endif // DRINKSHOP_H

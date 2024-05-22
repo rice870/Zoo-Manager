@@ -38,10 +38,13 @@ int DrinkShop::getVisited() {
     int selectedDrink;
     selectedDrink = rand() % menu.size();
     totalSales += prices[selectedDrink];
+    return totalSales;
 
 }
 
-
+void DrinkShop::addPrice(int _drinkPrice) {
+    prices.push_back(_drinkPrice);
+}
 /*Method to make a sale
 void DrinkShop::makeSale(double amount) {
     totalSales += amount;
@@ -59,6 +62,6 @@ vector<string> DrinkShop::getMenu() const {
 }
 
 // Getter method for prices
-vector<string> DrinkShop::getPrices() const {
+vector<double> DrinkShop::getPrices() const {
     return prices;
 }

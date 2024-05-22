@@ -579,15 +579,16 @@ int main() {
                                         std::cout << "What would you like to name your drink shop?" << std::endl;
                                         std::cin >> drinkshopName;
                                         z.addFacility(new DrinkShop(drinkshopName));
+                                        z.drinkShops.push_back(new DrinkShop(drinkshopName));
                                         std::string drinkNames;
                                         int drinkPrices;
                                         for(int i = 0; i < 4; i++) {
                                             std::cout << "Name drink " << i << ": ";
                                             std::cin >> drinkNames;
-                                            z.addDrink(drinkNames);
+                                            z.drinkShops[0]->addDrink(drinkNames);
                                             std::cout << "Name the price of this drink:";
                                             std::cin >> drinkPrices;
-                                            addPrice(drinkPrices); 
+                                            z.drinkShops[0]->addPrice(drinkPrices); 
                                         }
                                     break;
                                 }
@@ -609,8 +610,11 @@ int main() {
             }
 
 
-
+        if(z.get_money() <= 0) {
+            break;
+        }
         };
+
 
 
     }

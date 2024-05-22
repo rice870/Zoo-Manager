@@ -6,6 +6,7 @@
 #include <vector>
 
 #include "Animal.h"
+#include "Drinkshop.h"
 #include "Panda.h"
 #include "Kangaroo.h"
 #include "Elephant.h"
@@ -65,6 +66,7 @@ class Zoo {
         int countEnclosures();
         vector<Enclosure*> enclosures; // The zoo will have a vector of all if its enclosures, each enclosure can be seperately called, enclosures will each contain a animal pointer vector.
         vector<Animal*> allAnimals; // Think this should be public, as its being called directly in the addAnimal() function. Correct if wrong
+        vector<DrinkShop*> drinkShops;
 
         string get_name();
         string get_location();
