@@ -62,10 +62,10 @@ void Enclosure::addAnimal(Animal* a){
 void Enclosure::removeAnimal(Animal* a){
     vector<Animal*>::iterator animalToDelete = find(animals.begin(), animals.end(), a);
     if (animalToDelete != animals.end()){
-        string name = a->getName();
+        string animalName = a->getName();
         animals.erase(animalToDelete);
         enclosedCount--;
-        cout << name << " removed from enclosure: " << this->name << endl;
+        cout << animalName << " from enclosure: " << this->name << " died due to hunger." << endl;
     }
 }
 

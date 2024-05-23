@@ -4,7 +4,7 @@
 #include "Kangaroo.h"
 #include "Elephant.h"
 #include "Tortoise.h"
-#include "Kiwi.h"
+#include "kiwi.h"
 #include "Enclosure.h"
 #include "Facility.h"
 #include "Person.h"

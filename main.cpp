@@ -11,7 +11,7 @@
 #include "Enclosure.h"
 #include "Facility.h"
 #include "Kangaroo.h"
-#include "Kiwi.h"
+#include "kiwi.h"
 #include "Panda.h"
 //#include "Person.h"
 #include "Staff.h"
@@ -36,8 +36,8 @@ int main() {
     const int COST_PANDA = 200;
     const int COST_PANDA_ENCLOSURE = 2500;
     const int COST_BAMBOO = 5;
-    const int COST_KIWI = 85;
-    const int COST_KIWI_ENCLOSURE = 1250;
+    const int COST_KIWI = 25;
+    const int COST_KIWI_ENCLOSURE = 250;
     const int COST_INSECT = 10;
     const int COST_ELEPHANT = 500;
     const int COST_ELEPHANT_ENCLOSURE = 7500;
@@ -99,7 +99,13 @@ int main() {
                         srand(time(NULL));
                         // All animals increase in hunger by 1
                         for (int i=0;i<z.allAnimals.size();i++){
-                            z.allAnimals[i]->increaseHunger();
+                            if (z.allAnimals[i]->getHunger()>=10){
+                                z.releaseAnimal(z.allAnimals[i]->getID());
+                            } else {
+                                z.allAnimals[i]->setHunger(z.allAnimals[i]->getHunger()+1);
+                                std::cout << z.allAnimals[i]->getName() << " got hungry" << std::endl;
+                            }
+                            
                         }
 
                         // Create visitors
@@ -141,7 +147,7 @@ int main() {
                         }
 
                         // Feed animals
-                        vector<Animal*> animalsToFeed = z.get_animals();
+                        vector<Animal*> animalsToFeed = z.allAnimals;
                         for (int i=0;i<zookeepers.size();i++){
                             for (int j=0;j<10;j++){
                                 if (animalsToFeed.size() != 0){
@@ -150,6 +156,7 @@ int main() {
                                         if (z.get_bamboo() > 0){
                                             zookeepers[i]->feed(animalToFeed, "Bamboo", 1);
                                             z.addBamboo(-1);
+                                            std::cout << "Zookeeper, " << zookeepers[i]->getName() << ", fed " << animalToFeed->getName() << std::endl;
                                         } else {
                                             std::cout << "Zookeeper, " << zookeepers[i]->getName() << ", tried to feed " << animalToFeed->getName() << " but there was insufficient bamboo to do so!" << endl;
                                         }
@@ -157,6 +164,7 @@ int main() {
                                         if (z.get_insects() > 0){
                                             zookeepers[i]->feed(animalToFeed, "Insects", 1);
                                             z.addInsects(-1);
+                                            std::cout << "Zookeeper, " << zookeepers[i]->getName() << ", fed " << animalToFeed->getName() << std::endl;
                                         } else {
                                             std::cout << "Zookeeper, " << zookeepers[i]->getName() << ", tried to feed " << animalToFeed->getName() << " but there was insufficient " << animalToFeed->getFavouriteTreat() << " to do so!" << std::endl;
                                         }
@@ -316,7 +324,7 @@ int main() {
                                                         std::string animal_name;
                                                         std::cout << "What would you like to name your panda?" << std::endl;
                                                         std::getline(std::cin, animal_name);
-                                                        z.enclosures[i]->addAnimal(new Panda(70 + rand() % 40, animal_name));
+                                                        z.addAnimal(z.enclosures[i], new Panda(70 + rand() % 40, animal_name));
                                                         z.pay(COST_PANDA);
                                                     } else {
                                                         std::cout << "That enclosure's full!" << std::endl;
@@ -345,7 +353,7 @@ int main() {
                                                         std::string animal_name;
                                                         std::cout << "What would you like to name your kiwi?" << std::endl;
                                                         std::getline(std::cin, animal_name);
-                                                        z.enclosures[i]->addAnimal(new Kiwi(2 + rand() % 2, animal_name));
+                                                        z.addAnimal(z.enclosures[i], new Kiwi(2 + rand() % 2, animal_name));
                                                         z.pay(COST_KIWI);
                                                     } else {
                                                         std::cout << "That enclosure's full!" << std::endl;

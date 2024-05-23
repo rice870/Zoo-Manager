@@ -14,7 +14,7 @@ TARGET = zookeeper
 
 # Source files
 
-SRCS = main.cpp Zoo.cpp Enclosure.cpp Facility.cpp Panda.cpp Animal.cpp Visitor.cpp Person.cpp Staff.cpp Zookeeper.cpp Kangaroo.cpp Tortoise.cpp Elephant.cpp kiwi.cpp TicketTaker.cpp Drinkshop.cpp
+SRCS = main.cpp Zoo.cpp Enclosure.cpp Facility.cpp Panda.cpp Animal.cpp Visitor.cpp Person.cpp Staff.cpp Zookeeper.cpp Kangaroo.cpp Tortoise.cpp Elephant.cpp kiwi.cpp TicketTaker.cpp DrinkShop.cpp
 
 
 # Build and run tests

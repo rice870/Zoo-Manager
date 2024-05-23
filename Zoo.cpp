@@ -10,7 +10,7 @@
 #include "Kangaroo.h"
 #include "Elephant.h"
 #include "Tortoise.h"
-#include "Kiwi.h"
+#include "kiwi.h"
 #include "Enclosure.h"
 #include "Facility.h"
 #include "Person.h"
@@ -122,7 +122,6 @@ void Zoo::releaseAnimal(int _IDchoose) {
             for (int j = 0; j < enclosureCount; j++) {
                 enclosures[j]->removeAnimal(removedAnimal);
             }
-            cout << animalName << " removed from zoo!" << endl;
         }
         
     }   
